@@ -664,24 +664,26 @@
 
       <div class="project-card featured">
         <div class="project-top">
-          <h3 class="project-title">Real-Time Weather Data Pipeline</h3>
-          <div class="project-badge">Data Engineering</div>
+          <h3 class="project-title">Multi-PDF RAG Assistant</h3>
+          <div class="project-badge">GenAI / RAG</div>
         </div>
         <p class="project-desc">
-          End-to-end streaming pipeline that ingests live weather data, processes it with Spark, stores curated Parquet outputs, and loads analytics-ready tables into Snowflake.
+          Local document question-answering application that lets users upload multiple PDF files and ask questions using a RAG pipeline with FAISS and a local Llama 3.2 model.
         </p>
         <ul class="project-highlights">
-          <li>Built Kafka + Spark ingestion for streaming environmental data.</li>
-          <li>Orchestrated batch and hourly workflows with Airflow and Docker Compose.</li>
-          <li>Reduced manual data preparation effort by 40% through automated processing.</li>
+          <li>Built an end-to-end RAG workflow with PDF ingestion, text extraction, chunking, embeddings, vector search, and LLM-based answer generation.</li>
+          <li>Used FAISS for semantic retrieval and Ollama with Llama 3.2 for local, privacy-friendly document question answering.</li>
+          <li>Implemented Streamlit interface with multi-PDF upload, chat-style interaction, saved chat history, saved FAISS index, and retrieved source viewing.</li>
         </ul>
         <div class="pills">
-          <span>Kafka</span><span>Spark</span><span>Airflow</span><span>Snowflake</span><span>MinIO</span><span>Docker</span><span>Python</span>
+          <span>Python</span><span>Streamlit</span><span>LangChain</span><span>FAISS</span><span>Ollama</span><span>Llama 3.2</span><span>RAG</span><span>Semantic Search</span>
         </div>
         <div class="project-actions">
-          <a class="pbtn primary" href="https://github.com/Jaivinay/Real-Time-Weather-Data-Pipeline" target="_blank">Code</a>
+          <a class="pbtn primary" href="https://github.com/Jaivinay/multi-pdf-rag-assistant" target="_blank">Code</a>
         </div>
       </div>
+
+      
 
       <div class="project-card featured">
         <div class="project-top">
@@ -701,6 +703,27 @@
         </div>
         <div class="project-actions">
           <a class="pbtn primary" href="https://github.com/Jaivinay/Chatbot-Data-Logging-Analytics-for-Student-Admissions" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project-card featured">
+        <div class="project-top">
+          <h3 class="project-title">Real-Time Weather Data Pipeline</h3>
+          <div class="project-badge">Data Engineering</div>
+        </div>
+        <p class="project-desc">
+          End-to-end streaming pipeline that ingests live weather data, processes it with Spark, stores curated Parquet outputs, and loads analytics-ready tables into Snowflake.
+        </p>
+        <ul class="project-highlights">
+          <li>Built Kafka + Spark ingestion for streaming environmental data.</li>
+          <li>Orchestrated batch and hourly workflows with Airflow and Docker Compose.</li>
+          <li>Reduced manual data preparation effort by 40% through automated processing.</li>
+        </ul>
+        <div class="pills">
+          <span>Kafka</span><span>Spark</span><span>Airflow</span><span>Snowflake</span><span>MinIO</span><span>Docker</span><span>Python</span>
+        </div>
+        <div class="project-actions">
+          <a class="pbtn primary" href="https://github.com/Jaivinay/Real-Time-Weather-Data-Pipeline" target="_blank">Code</a>
         </div>
       </div>
 
@@ -746,27 +769,6 @@
         </div>
       </div>
 
-      <div class="project-card featured">
-        <div class="project-top">
-          <h3 class="project-title">Multi-PDF RAG Assistant</h3>
-          <div class="project-badge">GenAI / RAG</div>
-        </div>
-        <p class="project-desc">
-          Local document question-answering application that lets users upload multiple PDF files and ask questions using a RAG pipeline with FAISS and a local Llama 3.2 model.
-        </p>
-        <ul class="project-highlights">
-          <li>Built an end-to-end RAG workflow with PDF ingestion, text extraction, chunking, embeddings, vector search, and LLM-based answer generation.</li>
-          <li>Used FAISS for semantic retrieval and Ollama with Llama 3.2 for local, privacy-friendly document question answering.</li>
-          <li>Implemented Streamlit interface with multi-PDF upload, chat-style interaction, saved chat history, saved FAISS index, and retrieved source viewing.</li>
-        </ul>
-        <div class="pills">
-          <span>Python</span><span>Streamlit</span><span>LangChain</span><span>FAISS</span><span>Ollama</span><span>Llama 3.2</span><span>RAG</span><span>Semantic Search</span>
-        </div>
-        <div class="project-actions">
-          <a class="pbtn primary" href="https://github.com/Jaivinay/multi-pdf-rag-assistant" target="_blank">Code</a>
-        </div>
-      </div>
-
       <div class="project-card">
         <div class="project-top">
           <h3 class="project-title">Cross-Channel Marketing Dashboard</h3>
@@ -806,28 +808,6 @@
         </div>
         <div class="project-actions">
           <a class="pbtn primary" href="https://github.com/Jaivinay/Data-Science-Project-Challenge" target="_blank">Code</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-top">
-          <h3 class="project-title">Inventory AI Assistant Bot</h3>
-          <div class="project-badge">AI Chatbot</div>
-        </div>
-        <p class="project-desc">
-          Botpress-based assistant that answers inventory-related questions and provides conversational access to structured business data.
-        </p>
-        <ul class="project-highlights">
-          <li>Configured bot flows, fallback logic, and structured response handling.</li>
-          <li>Supported inventory lookup and reorder-related business questions.</li>
-          <li>Deployed a simple web interface for user interaction.</li>
-        </ul>
-        <div class="pills">
-          <span>Botpress</span><span>HTML</span><span>Structured Data</span><span>Prompt Logic</span>
-        </div>
-        <div class="project-actions">
-          <a class="pbtn primary" href="https://github.com/Jaivinay/Inventory-AI-Bot" target="_blank">Code</a>
-          <a class="pbtn" href="http://myweb.usf.edu/~jaivinaygudiveka/mybot.html" target="_blank">Live Demo</a>
         </div>
       </div>
 
