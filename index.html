@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jaivinay Gudiveka | AI/ML Engineer & Data Scientist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Jaivinay Gudiveka showcasing AI/ML, GenAI, Data Science, Data Engineering, Analytics, Cloud, BI, RAG, forecasting, and real-time data pipeline projects." />
+
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --card: #ffffff;
+      --dark: #0f172a;
+      --dark2: #111827;
+      --text: #1f2937;
+      --muted: #64748b;
+      --blue: #2563eb;
+      --blue2: #1d4ed8;
+      --cyan: #06b6d4;
+      --purple: #7c3aed;
+      --border: rgba(15, 23, 42, 0.08);
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 24px 60px rgba(15, 23, 42, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 32%),
+        radial-gradient(circle at top right, rgba(124, 58, 237, 0.08), transparent 32%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin: 0 0 16px;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 900px;
+      margin: 0 0 36px;
+      font-size: 16px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 10%;
+      gap: 18px;
+    }
+
+    .brand {
+      color: #ffffff;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 14px;
+    }
+
+    .nav a {
+      color: rgba(255,255,255,0.84);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(900px 450px at 50% 0%, rgba(37, 99, 235, 0.38), transparent 62%),
+        radial-gradient(700px 350px at 80% 20%, rgba(6, 182, 212, 0.20), transparent 62%),
+        linear-gradient(180deg, #020617 0%, #0f172a 60%, #111827 100%);
+      color: white;
+      padding: 120px 10% 90px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -100px -180px -100px;
+      height: 280px;
+      background: rgba(255,255,255,0.04);
+      transform: rotate(-3deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1050px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.88);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 74px);
+      line-height: 1.04;
+      margin: 0 0 18px;
+      letter-spacing: -1.8px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #60a5fa, #22d3ee, #c4b5fd);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero .subtitle {
+      font-size: clamp(19px, 2.4vw, 28px);
+      opacity: 0.96;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .hero .tagline {
+      font-size: 18px;
+      opacity: 0.86;
+      max-width: 920px;
+      margin: 0 0 28px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: white;
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+      min-width: 120px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      border-color: rgba(255,255,255,0.16);
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.30);
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .hero-pills span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.88);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .section-alt {
+      background: rgba(255,255,255,0.72);
+    }
+
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .stat-card {
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+    }
+
+    .stat-card strong {
+      display: block;
+      color: var(--blue);
+      font-size: 30px;
+      margin-bottom: 4px;
+    }
+
+    .experience-card,
+    .project-card,
+    .skill-group,
+    .contact-card {
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .experience-card:hover,
+    .project-card:hover,
+    .skill-group:hover,
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(37, 99, 235, 0.22);
+    }
+
+    .experience-card {
+      padding: 30px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .experience-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: linear-gradient(180deg, var(--blue), var(--cyan), var(--purple));
+    }
+
+    .experience-card h3 {
+      margin: 0 0 6px;
+      color: var(--dark);
+      font-size: 21px;
+    }
+
+    .role-focus {
+      font-weight: 800;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+
+    .meta-line {
+      margin: 8px 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tech-stack,
+    .pills,
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tech-stack span,
+    .pills span,
+    .skill-pills span {
+      display: inline-flex;
+      background: #f1f5f9;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      color: #334155;
+      font-weight: 700;
+    }
+
+    .projects-grid,
+    .skills-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card,
+    .skill-group,
+    .contact-card {
+      padding: 26px;
+    }
+
+    .project-card.featured {
+      border: 1px solid rgba(37, 99, 235, 0.28);
+      background:
+        linear-gradient(180deg, rgba(37, 99, 235, 0.04), rgba(255,255,255,1) 40%),
+        #ffffff;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.25;
+      color: var(--dark);
+    }
+
+    .project-badge {
+      background: rgba(37, 99, 235, 0.11);
+      color: var(--blue);
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      font-weight: 900;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .project-desc {
+      margin: 10px 0 14px;
+      color: #475569;
+    }
+
+    .project-highlights {
+      margin: 0 0 14px;
+      padding-left: 18px;
+      color: #111827;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pbtn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 13px;
+      border-radius: 11px;
+      font-weight: 900;
+      font-size: 13px;
+      text-decoration: none;
+      border: 1px solid rgba(15, 23, 42, 0.14);
+      color: var(--dark);
+      background: #ffffff;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .pbtn:hover {
+      transform: translateY(-2px);
+      background: #f8fafc;
+    }
+
+    .pbtn.primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue2));
+      border-color: rgba(37, 99, 235, 0.92);
+      color: white;
+    }
+
+    .skill-group h3,
+    .contact-card h3 {
+      margin: 0 0 14px;
+      font-size: 18px;
+      color: var(--dark);
+    }
+
+    .contact-card a {
+      color: var(--blue);
+      font-weight: 800;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      background: var(--dark2);
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1000px) {
+      section {
+        padding: 70px 7%;
+      }
+
+      .nav-inner {
+        padding: 14px 7%;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding: 110px 7% 85px;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .projects-grid,
+      .skills-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      section {
+        padding: 58px 5%;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 90px 5% 70px;
+      }
+
+      .nav-inner {
+        padding: 13px 5%;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr;
+      }
+
+      .project-top {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .section-title {
+        font-size: 29px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">Jaivinay Gudiveka</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Open to AI/ML, GenAI, Data Science, Data Engineering & Analytics roles</div>
+
+      <h1>Hi, I'm <span class="gradient-text">Jaivinay</span></h1>
+
+      <div class="subtitle">AI/ML Engineer | Data Scientist | Data Engineer</div>
+
+      <div class="tagline">
+        I build applied AI, machine learning, data engineering, analytics, cloud data, and dashboard solutions that turn complex data into reliable insights, automation, and measurable business value.
+      </div>
+
+      <div class="btn-row">
+        <a class="btn primary" href="https://www.linkedin.com/in/jaivinay-gudiveka/" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://github.com/Jaivinay" target="_blank">GitHub</a>
+        <a class="btn" href="Jaivinay_Gudiveka_Resume.pdf" target="_blank">Resume</a>
+      </div>
+
+      <div class="hero-pills">
+        <span>GenAI / RAG</span>
+        <span>Machine Learning</span>
+        <span>Data Science</span>
+        <span>Data Engineering</span>
+        <span>Power BI</span>
+        <span>Cloud Data Platforms</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section-alt">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-subtitle">
+      AI, data, and analytics professional focused on building practical solutions across machine learning, GenAI, data engineering, BI, and cloud-based analytics.
+    </p>
+
+    <div class="about-card">
+      <p>
+        Data and AI professional with 5+ years of experience across analytics, data engineering, machine learning, dashboard development, automation, and cloud data workflows. I hold an M.S. in Artificial Intelligence and Business Analytics from the University of South Florida, completed in December 2025, and a Computer Science background.
+      </p>
+      <p>
+        I am targeting U.S.-based AI/ML Engineer, Data Scientist, Applied AI Engineer, GenAI Developer, Data Engineer, Analytics Engineer, BI Analyst, and Data Analyst roles. My work focuses on Python, SQL, machine learning, forecasting, RAG applications, ETL pipelines, Power BI dashboards, cloud data platforms, and production-ready reporting systems.
+      </p>
+
+      <div class="stats-row">
+        <div class="stat-card"><strong>5+</strong>Years Data Experience</div>
+        <div class="stat-card"><strong>35%</strong>Reporting Effort Reduction</div>
+        <div class="stat-card"><strong>30%</strong>Pipeline Reliability Gain</div>
+        <div class="stat-card"><strong>150+</strong>Students Mentored</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+    <p class="section-subtitle">
+      Experience across AI-assisted analytics, ML workflows, data pipelines, dashboards, cloud platforms, and stakeholder-facing business intelligence.
+    </p>
+
+    <div class="experience-card">
+      <h3>Client - Elevance Health — Data Scientist</h3>
+      <div class="meta-line"><strong>Remote, USA</strong> · Jan 2025 – Present · Client: Elevance Health</div>
+      <div class="role-focus">Machine Learning · AI-Assisted Analytics · Data Pipelines · Dashboards</div>
+      <ul>
+        <li>Develop ML, forecasting, and statistical analysis workflows using Python, SQL, and AI-assisted tools to identify operational patterns and improve decision-making.</li>
+        <li>Build SQL and Python pipelines to ingest, clean, validate, and analyze large operational datasets, reducing recurring manual preparation effort by 35%.</li>
+        <li>Create Power BI dashboards and KPI models with validation checks and reusable reporting templates for 15+ stakeholders.</li>
+        <li>Analyze workflow bottlenecks, reporting failures, and data quality issues through root-cause investigation to improve downstream analytics reliability.</li>
+      </ul>
+      <div class="tech-stack">
+        <span>Python</span><span>SQL</span><span>Power BI</span><span>Power Query</span><span>ML Workflows</span><span>Data Validation</span><span>AI Tools</span>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <h3>University of South Florida — Graduate Assistant, AI & Analytics</h3>
+      <div class="meta-line"><strong>Tampa, FL</strong> · Aug 2025 – Dec 2025</div>
+      <div class="role-focus">Applied AI · Analytics · Dashboards · Student Mentorship</div>
+      <ul>
+        <li>Prepared Python and SQL datasets through cleaning, transformation, feature preparation, and validation for 10+ analytics and research workflows.</li>
+        <li>Designed Power BI dashboards and Excel reporting templates, reducing ad-hoc analysis requests by 50% through standardized reporting.</li>
+        <li>Mentored 150+ students in SQL, Python, statistics, machine learning, data visualization, and technical problem-solving.</li>
+      </ul>
+      <div class="tech-stack">
+        <span>Python</span><span>SQL</span><span>Power BI</span><span>Statistics</span><span>Machine Learning</span><span>Mentorship</span>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <h3>Tech Mahindra — Senior Data Scientist, AI & Analytics</h3>
+      <div class="meta-line"><strong>Bengaluru, India</strong> · Dec 2021 – Jul 2024</div>
+      <div class="role-focus">Data Engineering · Forecasting · Cloud Analytics · Business Intelligence</div>
+      <ul>
+        <li>Engineered Python, SQL, and PySpark pipelines across large enterprise datasets to produce model-ready and reporting-ready outputs.</li>
+        <li>Implemented ETL/ELT workflows using Databricks, Spark, AWS S3, Athena, Glue, and Snowflake, improving pipeline reliability by 30%.</li>
+        <li>Developed time-series forecasting and machine learning workflows for power and operational datasets to improve forecast visibility and performance optimization.</li>
+        <li>Delivered Power BI dashboards with KPI tracking and automated refresh, reducing manual reporting effort by 35% for 20+ stakeholders.</li>
+      </ul>
+      <div class="tech-stack">
+        <span>Python</span><span>SQL</span><span>PySpark</span><span>Databricks</span><span>AWS S3</span><span>Glue</span><span>Athena</span><span>Snowflake</span><span>Power BI</span>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <h3>Wipro Technologies — Data Analyst, Analytics & Automation</h3>
+      <div class="meta-line"><strong>Hyderabad, India</strong> · Jan 2020 – Dec 2021</div>
+      <div class="role-focus">SQL Reporting · Data Cleaning · KPI Dashboards · Automation</div>
+      <ul>
+        <li>Processed SQL and Python datasets for sales, finance, operations, and reporting use cases, improving data readiness for recurring business analysis.</li>
+        <li>Generated Power BI dashboards and Excel reports to monitor KPIs, trends, and business performance indicators for stakeholder review.</li>
+        <li>Automated recurring analytical workflows using Python, SQL, and reusable templates, reducing manual data preparation effort by 25%.</li>
+      </ul>
+      <div class="tech-stack">
+        <span>SQL</span><span>Python</span><span>Power BI</span><span>Excel</span><span>Data Cleaning</span><span>Reporting Automation</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section-alt">
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-subtitle">
+      Selected projects aligned to AI/ML, GenAI, data science, data engineering, forecasting, analytics, cloud data, and BI roles.
+    </p>
+
+    <div class="projects-grid">
+
+      <div class="project-card featured">
+        <div class="project-top">
+          <h3 class="project-title">Real-Time Weather Data Pipeline</h3>
+          <div class="project-badge">Data Engineering</div>
+        </div>
+        <p class="project-desc">
+          End-to-end streaming pipeline that ingests live weather data, processes it with Spark, stores curated Parquet outputs, and loads analytics-ready tables into Snowflake.
+        </p>
+        <ul class="project-highlights">
+          <li>Built Kafka + Spark ingestion for streaming environmental data.</li>
+          <li>Orchestrated batch and hourly workflows with Airflow and Docker Compose.</li>
+          <li>Reduced manual data preparation effort by 40% through automated processing.</li>
+        </ul>
+        <div class="pills">
+          <span>Kafka</span><span>Spark</span><span>Airflow</span><span>Snowflake</span><span>MinIO</span><span>Docker</span><span>Python</span>
+        </div>
+        <div class="project-actions">
+          <a class="pbtn primary" href="https://github.com/Jaivinay/Real-Time-Weather-Data-Pipeline" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project-card featured">
+        <div class="project-top">
+          <h3 class="project-title">LangChain BAIS Academic Assistant</h3>
+          <div class="project-badge">GenAI / RAG</div>
+        </div>
+        <p class="project-desc">
+          LLM-based academic assistant for BAIS program queries using RAG, embeddings, semantic search, Pinecone, and Streamlit.
+        </p>
+        <ul class="project-highlights">
+          <li>Implemented context-aware Q&A using OpenAI GPT API and LangChain.</li>
+          <li>Used Pinecone vector search to retrieve relevant structured and unstructured context.</li>
+          <li>Reduced manual query handling by 40% and improved response consistency by 30%.</li>
+        </ul>
+        <div class="pills">
+          <span>Python</span><span>LangChain</span><span>OpenAI</span><span>Pinecone</span><span>Streamlit</span><span>RAG</span>
+        </div>
+        <div class="project-actions">
+          <a class="pbtn primary" href="https://github.com/Jaivinay/Chatbot-Data-Logging-Analytics-for-Student-Admissions" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <h3 class="project-title">Deepfake Image Detection</h3>
+          <div class="project-badge">Deep Learning</div>
+        </div>
+        <p class="project-desc">
+          Computer vision project comparing Xception and Vision Transformer models for real versus fake image classification.
+        </p>
+        <ul class="project-highlights">
+          <li>Trained and evaluated competing deep learning architectures.</li>
+          <li>Compared model performance using validation metrics and loss curves.</li>
+          <li>Documented preprocessing, model design, and evaluation results for reproducibility.</li>
+        </ul>
+        <div class="pills">
+          <span>Python</span><span>TensorFlow</span><span>Xception</span><span>Vision Transformer</span><span>Deep Learning</span>
+        </div>
+        <div class="project-actions">
+          <a class="pbtn primary" href="https://github.com/Jaivinay/deepfake-image-detection" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <h3 class="project-title">AI-Driven Demand Forecasting</h3>
+          <div class="project-badge">ML Forecasting</div>
+        </div>
+        <p class="project-desc">
+          Forecasting and pricing optimization workflow using time-series modeling, Temporal Fusion Transformer concepts, and reinforcement learning techniques.
+        </p>
+        <ul class="project-highlights">
+          <li>Modeled multi-store demand patterns using time-series features.</li>
+          <li>Evaluated model performance through forecasting metrics and visual diagnostics.</li>
+          <li>Connected predictive insights to planning and pricing decisions.</li>
+        </ul>
+        <div class="pills">
+          <span>Python</span><span>PyTorch</span><span>Time Series</span><span>TFT</span><span>PPO</span><span>Forecasting</span>
+        </div>
+        <div class="project-actions">
+          <a class="pbtn primary" href="https://github.com/Jaivinay/AI-Driven-Demand-Forecasting" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project-card featured">
+        <div class="project-top">
+          <h3 class="project-title">Multi-PDF RAG Assistant</h3>
+          <div class="project-badge">GenAI / RAG</div>
+        </div>
+        <p class="project-desc">
+          Local document question-answering application that lets users upload multiple PDF files and ask questions using a RAG pipeline with FAISS and a local Llama 3.2 model.
+        </p>
+        <ul class="project-highlights">
+          <li>Built an end-to-end RAG workflow with PDF ingestion, text extraction, chunking, embeddings, vector search, and LLM-based answer generation.</li>
+          <li>Used FAISS for semantic retrieval and Ollama with Llama 3.2 for local, privacy-friendly document question answering.</li>
+          <li>Implemented Streamlit interface with multi-PDF upload, chat-style interaction, saved chat history, saved FAISS index, and retrieved source viewing.</li>
+        </ul>
+        <div class="pills">
+          <span>Python</span><span>Streamlit</span><span>LangChain</span><span>FAISS</span><span>Ollama</span><span>Llama 3.2</span><span>RAG</span><span>Semantic Search</span>
+        </div>
+        <div class="project-actions">
+          <a class="pbtn primary" href="https://github.com/Jaivinay/multi-pdf-rag-assistant" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <h3 class="project-title">Cross-Channel Marketing Dashboard</h3>
+          <div class="project-badge">BI Analytics</div>
+        </div>
+        <p class="project-desc">
+          Power BI dashboard integrating Facebook, Google, and TikTok campaign data into a unified model for channel-level performance analysis.
+        </p>
+        <ul class="project-highlights">
+          <li>Standardized campaign metrics across spend, engagement, conversion, and channel performance.</li>
+          <li>Built KPI visuals, filters, and DAX measures for executive reporting.</li>
+          <li>Identified underperforming channels and budget optimization opportunities.</li>
+        </ul>
+        <div class="pills">
+          <span>Power BI</span><span>SQL</span><span>DAX</span><span>Data Modeling</span><span>KPI Reporting</span>
+        </div>
+        <div class="project-actions">
+          <a class="pbtn primary" href="https://github.com/Jaivinay/Cross-Channel-Marketing-Performance-Dashboard" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <h3 class="project-title">Power Generation Forecasting</h3>
+          <div class="project-badge">Time Series</div>
+        </div>
+        <p class="project-desc">
+          Forecasted wind turbine and solar power generation using ARIMA and Python to support energy-style operational planning.
+        </p>
+        <ul class="project-highlights">
+          <li>Achieved 89% forecasting accuracy using ARIMA and time-series analysis.</li>
+          <li>Cleaned and preprocessed historical generation data for reliable modeling.</li>
+          <li>Visualized actual-versus-predicted values for clear technical communication.</li>
+        </ul>
+        <div class="pills">
+          <span>Python</span><span>ARIMA</span><span>Time Series</span><span>EDA</span><span>Forecasting</span>
+        </div>
+        <div class="project-actions">
+          <a class="pbtn primary" href="https://github.com/Jaivinay/Data-Science-Project-Challenge" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <h3 class="project-title">Inventory AI Assistant Bot</h3>
+          <div class="project-badge">AI Chatbot</div>
+        </div>
+        <p class="project-desc">
+          Botpress-based assistant that answers inventory-related questions and provides conversational access to structured business data.
+        </p>
+        <ul class="project-highlights">
+          <li>Configured bot flows, fallback logic, and structured response handling.</li>
+          <li>Supported inventory lookup and reorder-related business questions.</li>
+          <li>Deployed a simple web interface for user interaction.</li>
+        </ul>
+        <div class="pills">
+          <span>Botpress</span><span>HTML</span><span>Structured Data</span><span>Prompt Logic</span>
+        </div>
+        <div class="project-actions">
+          <a class="pbtn primary" href="https://github.com/Jaivinay/Inventory-AI-Bot" target="_blank">Code</a>
+          <a class="pbtn" href="http://myweb.usf.edu/~jaivinaygudiveka/mybot.html" target="_blank">Live Demo</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-subtitle">
+      Technical skills across AI/ML, GenAI, data science, data engineering, cloud platforms, BI, and software development workflows.
+    </p>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>AI, Machine Learning & GenAI</h3>
+        <div class="skill-pills">
+          <span>Machine Learning</span><span>Deep Learning</span><span>Time Series</span><span>Forecasting</span><span>TensorFlow</span><span>PyTorch Concepts</span><span>LangChain</span><span>OpenAI API</span><span>RAG</span><span>Prompt Engineering</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Data Science & Analytics</h3>
+        <div class="skill-pills">
+          <span>Python</span><span>SQL</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>EDA</span><span>Statistics</span><span>Data Validation</span><span>KPI Analysis</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Data Engineering & Cloud</h3>
+        <div class="skill-pills">
+          <span>PySpark</span><span>Databricks</span><span>Snowflake</span><span>AWS S3</span><span>AWS Glue</span><span>Athena</span><span>Kafka</span><span>Airflow</span><span>ETL/ELT</span><span>Docker</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>BI, Visualization & Tools</h3>
+        <div class="skill-pills">
+          <span>Power BI</span><span>Tableau</span><span>Excel</span><span>DAX</span><span>Power Query</span><span>Data Modeling</span><span>Git</span><span>GitHub</span><span>VS Code</span><span>Jupyter Notebook</span><span>Agile</span><span>Scrum</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-alt">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-subtitle">
+      I am open to AI/ML Engineer, Data Scientist, Applied AI Engineer, GenAI Developer, Data Engineer, Analytics Engineer, BI Analyst, and Data Analyst opportunities across the U.S.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p style="margin:0;"><a href="mailto:jaivinaygudiveka@gmail.com">jaivinaygudiveka@gmail.com</a></p>
+      </div>
+
+      <div class="contact-card">
+        <h3>LinkedIn</h3>
+        <p style="margin:0;"><a href="https://www.linkedin.com/in/jaivinay-gudiveka-421411187/" target="_blank">linkedin.com/in/jaivinay-gudiveka</a></p>
+      </div>
+
+      <div class="contact-card">
+        <h3>GitHub</h3>
+        <p style="margin:0;"><a href="https://github.com/Jaivinay" target="_blank">github.com/Jaivinay</a></p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Focus Areas</h3>
+        <p style="margin:0;">AI/ML, GenAI, Data Science, Data Engineering, Analytics, Cloud, and BI</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Jaivinay Gudiveka | AI/ML · Data Science · Data Engineering · Analytics
+  </footer>
+
+</body>
+</html>
