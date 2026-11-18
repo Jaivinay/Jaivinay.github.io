@@ -119,7 +119,9 @@ section{padding-block:clamp(64px,9vw,112px) 0;scroll-margin-top:64px}
 .xp .r{display:grid;grid-template-columns:160px minmax(0,1fr);gap:4px 32px;padding:20px 0;border-bottom:1px solid var(--hair);transition:padding-left .25s}
 .xp .r:hover{padding-left:10px}
 .xp .y{font:500 .8rem var(--mono);color:var(--muted);padding-top:3px}
-.xp h3{font:600 1.03rem var(--body)}
+.xp h3{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;font:400 1rem var(--body)}
+.xp .co{font:400 1.55rem/1.15 var(--serif);letter-spacing:-.01em}
+.xp .rl{font:600 .95rem var(--body);color:var(--accent)}
 .xp p{margin:3px 0 0;color:var(--muted);font-size:.93rem}
 @media (max-width:640px){.xp .r{grid-template-columns:1fr}}
 .about{font:400 clamp(1.45rem,2.9vw,2.05rem)/1.32 var(--serif);max-width:27em;margin:0}
@@ -222,12 +224,12 @@ html.js .rv.in{opacity:1;transform:none}
 <section id="experience">
   <div class="sh rv"><span class="mono">Career</span><h2>Experience</h2><p>The short version. The resume has the full detail.</p></div>
   <div class="xp rv">
-    <div class="r"><div class="y">2025 — now</div><div><h3>Senior Data Analyst, Product Analytics &amp; AI</h3>
-      <p>Bytebridge Technologies, financial services and insurance client. Cut claims document review time 40% with a RAG assistant, and replaced 5+ manual reports with tested, scheduled refreshes.</p></div></div>
-    <div class="r"><div class="y">2025</div><div><h3>Graduate Assistant, Data Analytics &amp; Statistics</h3>
-      <p>University of South Florida. Supported 50+ students across 30+ lab sessions in Python, SQL, statistics and machine learning.</p></div></div>
-    <div class="r"><div class="y">2021 — 2024</div><div><h3>Data Analyst &amp; Data Scientist</h3>
-      <p>Tech Mahindra, banking, retail and automotive clients. Reduced forecast error 10% on 10.5M+ records, and lowered report load time 30% for three business units.</p></div></div>
+    <div class="r"><div class="y">2025 — now</div><div><h3><span class="co">Bytebridge Technologies</span><span class="rl">Senior Data Analyst, Product Analytics &amp; AI</span></h3>
+      <p>Financial services and insurance client. Cut claims document review time 40% with a RAG assistant, and replaced 5+ manual reports with tested, scheduled refreshes.</p></div></div>
+    <div class="r"><div class="y">2025</div><div><h3><span class="co">University of South Florida</span><span class="rl">Graduate Assistant, Data Analytics &amp; Statistics</span></h3>
+      <p>Supported 50+ students across 30+ lab sessions in Python, SQL, statistics and machine learning.</p></div></div>
+    <div class="r"><div class="y">2021 — 2024</div><div><h3><span class="co">Tech Mahindra</span><span class="rl">Data Analyst &amp; Data Scientist</span></h3>
+      <p>Banking, retail and automotive clients. Reduced forecast error 10% on 10.5M+ records, and lowered report load time 30% for three business units.</p></div></div>
   </div>
 </section>
 
