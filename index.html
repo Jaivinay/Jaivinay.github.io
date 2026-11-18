@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Jaivinay Gudiveka — data analytics, business intelligence, data engineering, data science and AI. Case studies, code and contact.">
+<meta name="description" content="Jaivinay Gudiveka: data analytics, data science, AI and business intelligence. Case studies, code and contact.">
 <title>Jaivinay Gudiveka Portfolio</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
@@ -97,6 +97,12 @@ section{padding-block:clamp(64px,9vw,112px) 0;scroll-margin-top:64px}
 .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));gap:22px 36px;margin-top:30px;padding-top:26px;border-top:1px solid var(--hair)}
 .blk h4{font:600 .7rem var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
 .blk:last-child h4{color:var(--warm)}
+.found{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px 48px;align-items:center;margin-top:20px;padding:26px 28px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.found .num{font:400 italic 1rem var(--serif);color:var(--warm)}
+.found h3{font:400 clamp(1.4rem,2.4vw,1.8rem)/1.1 var(--serif);margin:6px 0 10px}
+.found p{margin:0;color:var(--muted);font-size:.92rem}
+.found .link{display:inline-block;margin-top:16px;font-weight:600;font-size:.9rem}
+@media (max-width:860px){.found{grid-template-columns:1fr;padding:22px}}
 .blk p{margin:0;font-size:.93rem;color:var(--ink)}
 .blk ul{margin:0;padding-left:1.05em}.blk li{margin-bottom:5px;font-size:.93rem}
 .caseLinks{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px}
@@ -151,10 +157,10 @@ html.js .rv.in{opacity:1;transform:none}
 </nav>
 
 <header class="hero" id="top">
-  <span class="mono">Data analytics · BI · Data engineering · Data science · AI</span>
+  <span class="mono">Data analytics · Data science · AI · BI</span>
   <h1 id="head">I turn messy data into <em>decisions</em> people trust.</h1>
   <div class="sub">
-    <p class="lede">I'm Jaivinay. I build the pipelines, the tests that keep them honest, the dashboards people open every morning, and the AI tools that answer questions from real documents.</p>
+    <p class="lede">I'm Jaivinay. I analyze data, build forecasting and machine learning models, design the dashboards people open every morning, and ship AI tools that answer questions from real documents.</p>
     <p class="seek">Open to data analyst, BI, analytics engineering, data science and applied AI roles.<br>United States — open to relocate.</p>
   </div>
   <div class="cta">
@@ -179,44 +185,44 @@ html.js .rv.in{opacity:1;transform:none}
 </div>
 
 <section id="work">
-  <div class="sh rv"><span class="mono">Selected work</span><h2>Three builds, start to finish</h2>
+  <div class="sh rv"><span class="mono">Selected work</span><h2>Analytics, data science and AI, in practice</h2>
     <p>Each one is written the same way: the problem, what I built, what came out of it, and what it does not do yet.</p></div>
 
-  <article class="case rv" data-diag="Raw transactions|AWS Glue + PySpark|Quality checks|Redshift|Power BI">
+  <article class="case rv" data-diag="Card transactions|Analysis-ready tables|KPI definitions|Power BI dashboards|Portfolio decisions">
     <div class="caseTop">
       <div>
-        <span class="num">01 — Analytics &amp; BI</span>
-        <h3>Making five million daily card transactions reportable</h3>
-        <p class="what">A credit card portfolio ran on manual reporting, and nobody could show which numbers had been checked before they reached a deck.</p>
-        <div class="chips"><span>AWS Glue</span><span>PySpark</span><span>Python</span><span>Redshift</span><span>SQL</span><span>Power BI</span><span>IAM</span></div>
+        <span class="num">01 — Data analytics &amp; BI</span>
+        <h3>Turning five million daily card transactions into a portfolio view</h3>
+        <p class="what">A credit card portfolio was reported by hand, and nobody could say which numbers had been checked before they reached a deck.</p>
+        <div class="chips"><span>SQL</span><span>Power BI</span><span>Python</span><span>Redshift</span><span>PySpark</span><span>AWS Glue</span></div>
       </div>
       <div class="dg"></div>
     </div>
     <div class="grid4">
-      <div class="blk"><h4>Problem</h4><p>High transaction volume, reporting built by hand each cycle, and no evidence trail behind the figures.</p></div>
-      <div class="blk"><h4>What I built</h4><ul><li>Automated ETL through Glue and PySpark into Redshift</li><li>Validation, reconciliation, metadata and lineage</li><li>IAM-based access control</li><li>Power BI views for utilization, spend, payments, delinquency</li></ul></div>
-      <div class="blk"><h4>Result</h4><p>Reporting moved from manual assembly to a pipeline with checks that run before anyone sees a number.</p></div>
-      <div class="blk"><h4>Limits</h4><p>The 40% manual-reporting reduction, 30% faster runs and 99.5% pass rate are the design targets, not production measurements.</p></div>
+      <div class="blk"><h4>Question</h4><p>How are utilization, spending, payments and delinquency moving across the portfolio, and can leaders trust the figures?</p></div>
+      <div class="blk"><h4>What I built</h4><ul><li>Power BI dashboards for utilization, spend, payments and delinquency</li><li>SQL analysis in Redshift on reconciled, validated transactions</li><li>Agreed KPI definitions and lineage notes behind each metric</li><li>IAM-based access so each audience sees what it should</li></ul></div>
+      <div class="blk"><h4>Result</h4><p>Reporting moved from manual assembly to checked data feeding the dashboards, so every number has a trail behind it.</p></div>
+      <div class="blk"><h4>Limits</h4><p>The 40% manual-reporting reduction, 30% faster runs and 99.5% quality pass rate are design targets, not production measurements.</p></div>
     </div>
   </article>
 
-  <article class="case rv" data-diag="Payer feeds|Idempotent loader|dbt + 60 tests|Governed metrics|AI query agent">
+  <article class="case rv" data-diag="Walmart M5 sales|Temporal Fusion Transformer|PPO agent|Decisions">
     <div class="caseTop">
       <div>
-        <span class="num">02 — Data engineering</span>
-        <h3>A healthcare data platform that refuses bad rows</h3>
-        <p class="what">Claims, member, provider and pharmacy feeds change shape without warning. This platform catches that before an analyst or an AI agent ever sees the data.</p>
-        <div class="chips"><span>Python</span><span>dbt</span><span>Snowflake</span><span>pytest</span><span>GitHub Actions</span><span>SQL</span><span>RBAC</span></div>
+        <span class="num">02 — Data science &amp; ML</span>
+        <h3>Forecasting demand, then deciding what to do about it</h3>
+        <p class="what">A forecast on its own does not make a decision. This project pairs a deep-learning forecaster with a reinforcement-learning agent and measures it against a statistical baseline.</p>
+        <div class="chips"><span>Python</span><span>Temporal Fusion Transformer</span><span>Reinforcement learning</span><span>PPO</span></div>
       </div>
       <div class="dg"></div>
     </div>
     <div class="grid4">
-      <div class="blk"><h4>Problem</h4><p>Healthcare feeds arrive dirty and drift over time, and a governed metric is worthless if the row beneath it is wrong.</p></div>
-      <div class="blk"><h4>What I built</h4><ul><li>Idempotent loads with source data contracts</li><li>Schema-drift flags and quarantined bad rows</li><li>A governed metrics layer with Snowflake RBAC and masking</li><li>An AI query agent with SQL guardrails and PHI redaction</li></ul></div>
-      <div class="blk"><h4>Result</h4><p>60+ dbt tests and 32 pytest tests run in CI on every change, so a breaking feed fails the build instead of the dashboard.</p></div>
-      <div class="blk"><h4>Limits</h4><p>Built on synthetic data, so the privacy and masking layers are demonstrated rather than certified against a real payer feed.</p></div>
+      <div class="blk"><h4>Question</h4><p>Does a Temporal Fusion Transformer feeding a PPO agent beat a plain statistical forecast on retail demand?</p></div>
+      <div class="blk"><h4>What I built</h4><ul><li>A Temporal Fusion Transformer for the demand forecasts</li><li>A PPO reinforcement-learning agent that acts on them</li><li>Training and comparison across 25 store-level datasets from Walmart M5 sales data</li><li>Joint tuning of forecaster and agent</li></ul></div>
+      <div class="blk"><h4>Result</h4><p>Forecast error came out 10% lower than the statistical baseline.</p></div>
+      <div class="blk"><h4>Limits</h4><p>Run on public competition data, so it shows how the method performs rather than a deployment inside a real supply chain.</p></div>
     </div>
-    <div class="caseLinks"><a href="https://github.com/Jaivinay/healthcare-data-platform" target="_blank" rel="noopener">Read the code →</a></div>
+    <div class="caseLinks"><a href="https://github.com/Jaivinay/AI-Driven-Demand-Forecasting" target="_blank" rel="noopener">Read the code →</a></div>
   </article>
 
   <article class="case rv" data-diag="Policy PDFs|Chunk + embed|Pinecone|LangChain + LLM|Cited answer">
@@ -230,15 +236,24 @@ html.js .rv.in{opacity:1;transform:none}
       <div class="dg"></div>
     </div>
     <div class="grid4">
-      <div class="blk"><h4>Problem</h4><p>Answers had to be traceable to a clause in a policy document, not generated from an unverifiable model.</p></div>
+      <div class="blk"><h4>Question</h4><p>Can an assistant answer policy and risk questions in plain language and still point to the clause behind each answer?</p></div>
       <div class="blk"><h4>What I built</h4><ul><li>Ingestion with text extraction and overlapping chunks</li><li>Embeddings stored and retrieved in Pinecone</li><li>LangChain retrieval that keeps answers tied to the source</li><li>A Streamlit app for multi-PDF upload and plain questions</li></ul></div>
       <div class="blk"><h4>Result</h4><p>An evaluation framework scores retrieval relevance, grounded accuracy and latency, so changes can be compared instead of guessed at.</p></div>
       <div class="blk"><h4>Limits</h4><p>It runs locally rather than as a hosted demo, and the evaluation set covers card policy documents only.</p></div>
     </div>
   </article>
-  <p class="mono rv" style="margin-top:28px;text-transform:none;letter-spacing:0;font-size:.86rem;color:var(--muted)">
-    Also on GitHub: <a href="https://github.com/Jaivinay/AI-Driven-Demand-Forecasting" target="_blank" rel="noopener">AI-Driven Demand Forecasting</a> — a Temporal Fusion Transformer paired with a PPO agent, 10% below a statistical baseline across 25 store-level datasets.
-  </p>
+
+  <div class="found rv">
+    <div>
+      <span class="num">Also built · Data foundations</span>
+      <h3>A healthcare data platform that refuses bad rows</h3>
+      <p>Claims, member, provider and pharmacy feeds with source data contracts, schema-drift flags and quarantined bad rows, a governed metrics layer with Snowflake RBAC and masking, and an AI query agent with SQL guardrails and PHI redaction. 60+ dbt tests and 32 pytest tests run in CI on every change. Built on synthetic data.</p>
+    </div>
+    <div>
+      <div class="chips"><span>dbt</span><span>Snowflake</span><span>Python</span><span>pytest</span><span>GitHub Actions</span></div>
+      <a class="link" href="https://github.com/Jaivinay/healthcare-data-platform" target="_blank" rel="noopener">Read the code →</a>
+    </div>
+  </div>
 </section>
 
 <section id="how">
