@@ -1,147 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Portfolio of Jaivinay Gudiveka: data analytics, business intelligence, data science, data engineering, and AI projects and experience.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Jaivinay Gudiveka: data analytics, business intelligence, data science and AI portfolio.">
 <title>Jaivinay Gudiveka Portfolio</title>
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: one calm column, sticky section nav, expandable project cards */
+/* Layout: oversized name + a results chart as the hero, index-style focus list, timeline, flow-diagram project cards */
 :root{
   color-scheme:light;
-  --bg:#f3f6f8; --surface:#ffffff; --ink:#13202b; --muted:#566879; --line:#d7dfe6;
-  --accent:#0a6a86; --accent-soft:#e1f1f6; --chip:#eaf0f4;
-  --display:'Space Grotesk','IBM Plex Sans',system-ui,sans-serif;
-  --body:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --bg:#f5f6fb; --surface:#ffffff; --ink:#0c1226; --muted:#59627a; --line:#dde1ee;
+  --accent:#1f4fff; --accent-ink:#ffffff; --accent-soft:#e6ecff; --signal:#f59e0b; --bar:#dfe5fb; --grid:#d5daea;
+  --display:'Bricolage Grotesque','Inter',system-ui,sans-serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0c1620; --surface:#132130; --ink:#e5edf3; --muted:#94a6b6; --line:#24384a;
-  --accent:#55c4de; --accent-soft:#12303b; --chip:#1a2c3d; color-scheme:dark}}
+  --bg:#080d1c; --surface:#0f1730; --ink:#eaf0ff; --muted:#9aa6c7; --line:#1f2a4d;
+  --accent:#7c9bff; --accent-ink:#071030; --accent-soft:#16224a; --signal:#ffc24d; --bar:#1a2650; --grid:#1b2548; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0c1620; --surface:#132130; --ink:#e5edf3; --muted:#94a6b6; --line:#24384a;
-  --accent:#55c4de; --accent-soft:#12303b; --chip:#1a2c3d; color-scheme:dark}
+  --bg:#080d1c; --surface:#0f1730; --ink:#eaf0ff; --muted:#9aa6c7; --line:#1f2a4d;
+  --accent:#7c9bff; --accent-ink:#071030; --accent-soft:#16224a; --signal:#ffc24d; --bar:#1a2650; --grid:#1b2548; color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
-  padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.wrap{max-width:1020px;margin:0 auto}
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  background-image:radial-gradient(var(--grid) 1px,transparent 1.2px);background-size:26px 26px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+.wrap{max-width:1140px;margin:0 auto}
 a{color:var(--accent)}
-h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
-h2{font-size:1.5rem;letter-spacing:-.01em}
-.label{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-header.top{padding-block:56px 36px;display:grid;gap:18px}
-header.top h1{font-size:clamp(2.2rem,6vw,3.6rem);letter-spacing:-.02em}
-.role{font-family:var(--mono);color:var(--accent);font-size:.95rem}
-.intro{max-width:62ch;font-size:1.08rem;color:var(--ink)}
-.links{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.btn{font:500 .9rem var(--body);padding:9px 16px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-:root[data-theme="dark"] .btn.primary{color:#07202a}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#07202a}}
-.btn:focus-visible,.chip:focus-visible,nav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.meta{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
-nav.sec{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-block:1px solid var(--line);
-  margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));overflow-x:auto}
-nav.sec .in{max-width:1020px;margin:0 auto;display:flex;gap:4px}
-nav.sec a{font-family:var(--mono);font-size:.8rem;color:var(--muted);text-decoration:none;padding:12px 12px;white-space:nowrap}
-nav.sec a:hover{color:var(--accent)}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
-section{padding-block:52px 8px;scroll-margin-top:56px}
-section>.head{display:flex;flex-direction:column;gap:6px;margin-bottom:22px}
-.focus{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-.focus article{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;min-width:0}
-.focus h3{font-size:1.05rem;margin-bottom:8px}
-.focus ul{margin:0;padding-left:1.1em;color:var(--muted);font-size:.93rem}
-.focus li{margin-bottom:3px}
-@media (min-width:900px){.focus article:last-child{grid-column:span 2}.focus article:last-child ul{columns:2;column-gap:28px}.focus article:last-child li{break-inside:avoid}}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-.chip{font:500 .82rem var(--mono);padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-:root[data-theme="dark"] .chip[aria-pressed="true"]{color:#07202a}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .chip[aria-pressed="true"]{color:#07202a}}
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:16px}
-.proj{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.proj h3{font-size:1.1rem}
-.proj p{margin:0;color:var(--muted);font-size:.93rem}
-.proj ul{margin:0;padding-left:1.1em;font-size:.9rem}
-.proj li{margin-bottom:4px}
-.stack{font-family:var(--mono);font-size:.76rem;color:var(--accent)}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
-.tag{font:400 .72rem var(--mono);background:var(--chip);color:var(--muted);padding:3px 8px;border-radius:4px}
-.proj a.repo{font-size:.85rem}
-
-details.proj{padding:0;display:block}
-details.proj summary{list-style:none;cursor:pointer;padding:20px;display:flex;flex-direction:column;gap:8px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+.eyebrow{font:500 .75rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+/* nav */
+nav.top{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);z-index:50;margin-top:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;padding:8px 10px 8px 20px}
+nav.top .brand{font:700 1rem var(--display);letter-spacing:-.01em;white-space:nowrap}
+nav.top .links{display:flex;gap:2px;overflow-x:auto}
+nav.top .links a{font:500 .82rem var(--body);color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:999px;white-space:nowrap}
+nav.top .links a:hover{background:var(--accent-soft);color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .92rem var(--body);padding:12px 20px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:focus-visible,nav a:focus-visible,summary:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:72px 40px}
+.hero h1{font-size:clamp(3rem,8.4vw,6.4rem);line-height:.95;letter-spacing:-.04em;font-weight:800;margin-block:14px 22px}
+.hero h1 span{color:var(--accent)}
+.lede{font-size:1.2rem;max-width:36ch;color:var(--ink)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.where{margin-top:22px;font:500 .8rem var(--mono);color:var(--muted)}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px 24px 18px;box-shadow:0 24px 60px -30px rgba(15,30,90,.35)}
+.chart h2{font-size:1.15rem;letter-spacing:-.01em;margin:6px 0 2px}
+.chart p.sub{margin:0 0 16px;color:var(--muted);font-size:.85rem}
+.bars{display:grid;gap:11px}
+.bar{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:baseline;font-size:.85rem}
+.bar .t{color:var(--ink);font-weight:500}
+.bar .v{font:500 .82rem var(--mono);color:var(--accent)}
+.bar .track{grid-column:1/-1;height:10px;border-radius:99px;background:var(--bar);overflow:hidden}
+.bar .fill{height:100%;width:var(--w);border-radius:99px;background:var(--accent);transform-origin:left;animation:grow .9s cubic-bezier(.2,.7,.2,1) backwards}
+.bar:nth-child(even) .fill{background:var(--signal)}
+.bar:nth-child(even) .v{color:var(--ink)}
+.bar .ctx{grid-column:1/-1;font-size:.74rem;color:var(--muted);margin-top:-1px}
+@keyframes grow{from{transform:scaleX(0)}}
+.bar:nth-child(2) .fill{animation-delay:.06s}.bar:nth-child(3) .fill{animation-delay:.12s}.bar:nth-child(4) .fill{animation-delay:.18s}.bar:nth-child(5) .fill{animation-delay:.24s}.bar:nth-child(6) .fill{animation-delay:.3s}.bar:nth-child(7) .fill{animation-delay:.36s}
+/* sections */
+section{padding-block:72px 6px;scroll-margin-top:84px}
+.sh{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.sh h2{font-size:clamp(2rem,4.5vw,3rem);letter-spacing:-.03em;font-weight:800}
+/* focus index */
+.index{border-top:1.5px solid var(--ink)}
+.index .row{display:grid;grid-template-columns:70px minmax(0,1fr) minmax(0,1.3fr);gap:8px 24px;padding:20px 8px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .15s,padding .15s}
+.index .row:hover{background:var(--accent-soft);padding-inline:18px}
+.index .n{font:500 .8rem var(--mono);color:var(--accent)}
+.index h3{font-size:1.5rem;letter-spacing:-.02em}
+.index p{margin:0;color:var(--muted)}
+@media (max-width:760px){.index .row{grid-template-columns:36px 1fr}.index p{grid-column:2}}
+/* timeline */
+.job{display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 36px;padding-block:28px;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:1.5px solid var(--ink)}
+.job .yr{font:800 1.9rem var(--display);letter-spacing:-.03em;line-height:1}
+.job .yr small{display:block;margin-top:8px;font:500 .78rem var(--mono);color:var(--muted);letter-spacing:0}
+.job h3{font-size:1.35rem;letter-spacing:-.02em}
+.job .org{color:var(--muted);margin:2px 0 12px}
+.job ul{margin:0;padding-left:1.15em}
+.job li{margin-bottom:7px}
+.tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tools span,.tag{font:500 .74rem var(--mono);background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:99px}
+@media (max-width:760px){.job{grid-template-columns:1fr}.job .yr{font-size:1.5rem}}
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,500px),1fr));gap:18px;align-items:start}
+details.proj{background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+details.proj:hover{transform:translateY(-3px);box-shadow:0 24px 50px -28px rgba(15,30,90,.45)}
+details.proj summary{list-style:none;cursor:pointer;padding:24px;display:flex;flex-direction:column;gap:12px}
 details.proj summary::-webkit-details-marker{display:none}
-details.proj summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:8px}
-details.proj .more{font:500 .8rem var(--mono);color:var(--accent);margin-top:4px}
-details.proj[open] .more{visibility:hidden;height:0;margin:0}
-details.proj .detail{padding:0 20px 20px;display:flex;flex-direction:column;gap:10px}
-.projects{align-items:start}
-details.proj .sum{margin:2px 0 0;color:var(--ink);font-size:.93rem}
+.proj .dept{font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.proj h3{font-size:1.45rem;letter-spacing:-.02em;line-height:1.15}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font:500 .74rem var(--mono)}
+.flow b{font-weight:500;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:5px 9px;color:var(--ink)}
+.flow i{font-style:normal;color:var(--signal);font-weight:700}
+.proj .sum{margin:0;color:var(--muted);font-size:.95rem}
+.proj .more{font:600 .82rem var(--body);color:var(--accent)}
+details.proj[open] .more{display:none}
+.detail{padding:0 24px 24px;display:flex;flex-direction:column;gap:10px;border-top:1px dashed var(--line);padding-top:18px;margin-inline:24px;padding-inline:0}
+.detail ul{margin:0;padding-left:1.15em}
+.detail li{margin-bottom:6px;font-size:.93rem}
 .note{font-size:.8rem;color:var(--muted);font-style:italic}
-.job{display:grid;grid-template-columns:200px 1fr;gap:6px 28px;padding-block:22px;border-top:1px solid var(--line)}
-.job:first-of-type{border-top:0}
-.job .when{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
-.job h3{font-size:1.15rem}
-.job .org{color:var(--muted);font-size:.93rem;margin-bottom:8px}
-.job ul{margin:0;padding-left:1.1em}
-.job .tools{font-family:var(--mono);font-size:.78rem;color:var(--accent);margin-top:10px}
-.job li{margin-bottom:6px}
-@media (max-width:700px){.job{grid-template-columns:1fr}}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-.skills div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;min-width:0}
-.skills h3{font-size:.95rem;margin-bottom:10px}
-.skills .tags{margin:0;padding:0}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.two h3{font-size:1.05rem;margin-bottom:10px}
-.two p{margin:0 0 10px}
-.contact{background:var(--accent-soft);border:1px solid var(--line);border-radius:8px;padding:28px;display:grid;gap:12px}
-.contact h2{font-size:1.4rem}
-.mail{font-family:var(--mono);font-size:1rem;word-break:break-all}
-footer{padding-block:36px 48px;color:var(--muted);font-size:.82rem;font-family:var(--mono)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:16px}
+.skills>div{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}
+.skills h3{font-size:1rem;margin-bottom:12px;letter-spacing:-.01em}
+.skills .cl{display:flex;flex-wrap:wrap;gap:6px}
+.skills .cl span{font:500 .76rem var(--mono);border:1px solid var(--line);padding:4px 10px;border-radius:99px;color:var(--ink)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:28px}
+.two h3{font-size:1.2rem;margin-bottom:12px}
+.two p{margin:0 0 12px}
+.cta-band{margin-block:72px 24px;background:var(--accent);color:var(--accent-ink);border-radius:28px;padding:clamp(28px,5vw,56px);display:grid;gap:18px}
+.cta-band h2{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1;letter-spacing:-.04em;font-weight:800}
+.cta-band .mail{font:500 clamp(1rem,2.4vw,1.4rem) var(--mono);word-break:break-all}
+.cta-band .btn{border-color:var(--accent-ink);color:var(--accent-ink)}
+.cta-band .btn.solid{background:var(--accent-ink);color:var(--accent)}
+.cta-band .meta{font:500 .8rem var(--mono);opacity:.85}
+footer{padding-block:20px 48px;color:var(--muted);font:500 .78rem var(--mono)}
+@media (max-width:860px){.hero{grid-template-columns:1fr;padding-block:48px 24px;gap:32px}nav.top .links a:nth-child(n+5){display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar .fill{animation:none}.btn,details.proj,.index .row{transition:none}}
 </style>
+
 </head>
 <body>
 <div class="wrap">
-<header class="top" id="top">
-  <span class="label">Data portfolio</span>
-  <h1>Jaivinay Gudiveka</h1>
-  <div class="role">Data Analytics · Business Intelligence · Data Science · AI</div>
-  <p class="intro">I turn messy business data into decisions people can trust. Over 4 years I have worked across banking, insurance, healthcare, retail, and automotive data, from SQL and dashboards to forecasting models, data pipelines, and AI assistants that answer questions from company documents.</p>
-  <div class="links">
-    <a class="btn primary" href="#projects">See projects</a>
-    <a class="btn" href="https://www.linkedin.com/in/jaivinaygudiveka" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="btn" href="https://github.com/Jaivinay" target="_blank" rel="noopener">GitHub</a>
-    <button class="btn" id="copyTop" type="button">Copy email</button>
+<nav class="top" aria-label="Sections">
+  <span class="brand">Jaivinay G.</span>
+  <div class="links"><a href="#focus">Focus</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <span class="eyebrow">Data analytics · BI · Data science · AI</span>
+    <h1>Jaivinay <span>Gudiveka</span></h1>
+    <p class="lede">I turn messy business data into dashboards, models, and AI tools that people actually use.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">See projects</a>
+      <a class="btn" href="https://www.linkedin.com/in/jaivinaygudiveka" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Jaivinay" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="where">Tampa, FL · Open to relocate · M.S. in AI &amp; Business Analytics</div>
   </div>
-  <div class="meta">Tampa, FL · Open to relocate · M.S. in AI &amp; Business Analytics</div>
+  <aside class="chart" aria-label="Selected results">
+    <span class="eyebrow">Selected results</span>
+    <h2>What changed after the work</h2>
+    <p class="sub">Measured improvements from past projects</p>
+    <div class="bars">
+      <div class="bar" style="--w:100%"><span class="t">Claims document review time</span><span class="v">−40%</span><div class="track"><div class="fill"></div></div><span class="ctx">RAG assistant over 10,000+ documents, 20+ reviewers</span></div>
+      <div class="bar" style="--w:75%"><span class="t">Repeat support tickets</span><span class="v">−30%</span><div class="track"><div class="fill"></div></div><span class="ctx">Across 100+ monthly issues</span></div>
+      <div class="bar" style="--w:75%"><span class="t">Report load time</span><span class="v">−30%</span><div class="track"><div class="fill"></div></div><span class="ctx">Rebuilt dashboards for 3 business units</span></div>
+      <div class="bar" style="--w:70%"><span class="t">Source-to-report discrepancies</span><span class="v">−28%</span><div class="track"><div class="fill"></div></div><span class="ctx">Reconciled data across source systems</span></div>
+      <div class="bar" style="--w:50%"><span class="t">Data issues</span><span class="v">−20%</span><div class="track"><div class="fill"></div></div><span class="ctx">Automated quality checks, 3 business units</span></div>
+      <div class="bar" style="--w:45%"><span class="t">Decision accuracy</span><span class="v">+18%</span><div class="track"><div class="fill"></div></div><span class="ctx">Across 10+ A/B experiments</span></div>
+      <div class="bar" style="--w:25%"><span class="t">Forecast error</span><span class="v">−10%</span><div class="track"><div class="fill"></div></div><span class="ctx">Models on 10.5M+ records</span></div>
+    </div>
+  </aside>
 </header>
 
-<nav class="sec" aria-label="Sections"><div class="in">
-  <a href="#focus">Focus</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>
-</div></nav>
-
 <section id="focus">
-  <div class="head"><span class="label">Areas</span><h2>Focus areas</h2></div>
-  <div class="focus">
-    <article><h3>Data analytics</h3><ul><li>SQL analysis on 10M+ record datasets</li><li>KPI definitions the business agrees on</li><li>Root-cause analysis and trend reporting</li></ul></article>
-    <article><h3>Business intelligence</h3><ul><li>Power BI, Tableau, and Looker dashboards</li><li>Self-service reporting for 50+ users</li><li>Scheduled, tested report refreshes</li></ul></article>
-    <article><h3>Data science &amp; ML</h3><ul><li>Forecasting, regression, and classification</li><li>A/B tests and difference-in-differences studies</li><li>Marketing mix and attribution modeling</li></ul></article>
-    <article><h3>Data engineering</h3><ul><li>Python and PySpark pipelines</li><li>Snowflake, Redshift, AWS Glue, dbt</li><li>Data quality checks, lineage, and governance</li></ul></article>
-    <article><h3>AI &amp; GenAI</h3><ul><li>RAG assistants with LangChain and Pinecone</li><li>Agent layers that check answers against sources</li><li>Claude Code, Codex, and GitHub Copilot in daily work</li></ul></article>
+  <div class="sh"><span class="eyebrow">Focus</span><h2>What I work on</h2></div>
+  <div class="index">
+    <div class="row"><span class="n">A</span><h3>Data analytics</h3><p>SQL analysis on 10M+ record datasets, KPI definitions the business agrees on, and root-cause analysis.</p></div>
+    <div class="row"><span class="n">B</span><h3>Business intelligence</h3><p>Power BI, Tableau, and Looker dashboards, self-service reporting for 50+ users, scheduled and tested refreshes.</p></div>
+    <div class="row"><span class="n">C</span><h3>Data science &amp; ML</h3><p>Forecasting, regression, A/B tests, difference-in-differences studies, and marketing mix modeling.</p></div>
+    <div class="row"><span class="n">D</span><h3>Data engineering</h3><p>Python and PySpark pipelines on Snowflake, Redshift, and AWS Glue, with data quality checks and lineage.</p></div>
+    <div class="row"><span class="n">E</span><h3>AI &amp; GenAI</h3><p>RAG assistants with LangChain and Pinecone, agent layers that check answers against sources, and daily use of Claude Code, Codex, and GitHub Copilot.</p></div>
   </div>
 </section>
 
 <section id="experience">
-  <div class="head"><span class="label">Career</span><h2>Experience</h2></div>
+  <div class="sh"><span class="eyebrow">Career</span><h2>Experience</h2></div>
 
   <div class="job">
-    <div class="when">Jun 2025 – Present<br>Remote, USA</div>
+    <div class="yr">2025 – now<small>Remote, USA</small></div>
     <div>
       <h3>Senior Data Analyst, Product Analytics &amp; AI</h3>
       <div class="org">Bytebridge Technologies · financial services and insurance client</div>
@@ -153,12 +189,12 @@ footer{padding-block:36px 48px;color:var(--muted);font-size:.82rem;font-family:v
         <li>Replaced 5+ manual reports with scheduled, tested refreshes, saving 100+ hours a month.</li>
         <li>Briefed 10+ leaders every month and ran 35+ experiments to settle which changes worked.</li>
       </ul>
-      <div class="tools">Tools: SQL, Python, R, Spark, Snowflake, Tableau, Power BI, RAG, GitHub Actions</div>
+      <div class="tools"><span>SQL</span><span>Python</span><span>R</span><span>Spark</span><span>Snowflake</span><span>Tableau</span><span>Power BI</span><span>RAG</span><span>GitHub Actions</span></div>
     </div>
   </div>
 
   <div class="job">
-    <div class="when">Aug 2025 – Dec 2025<br>Tampa, FL</div>
+    <div class="yr">2025<small>Aug – Dec · Tampa, FL</small></div>
     <div>
       <h3>Graduate Assistant, Data Analytics &amp; Statistics</h3>
       <div class="org">University of South Florida</div>
@@ -166,12 +202,12 @@ footer{padding-block:36px 48px;color:var(--muted);font-size:.82rem;font-family:v
         <li>Supported 50+ students across 30+ lab sessions in Python, SQL, data science, and machine learning.</li>
         <li>Taught biostatistics and statistical reasoning in R and Python with clinical and patient-data examples.</li>
       </ul>
-      <div class="tools">Tools: Python, SQL, R, pandas, scikit-learn</div>
+      <div class="tools"><span>Python</span><span>SQL</span><span>R</span><span>pandas</span><span>scikit-learn</span></div>
     </div>
   </div>
 
   <div class="job">
-    <div class="when">Dec 2021 – Jul 2024<br>Bengaluru, India</div>
+    <div class="yr">2021 – 2024<small>Dec – Jul · Bengaluru, India</small></div>
     <div>
       <h3>Data Analyst &amp; Data Scientist, Analytics &amp; Experimentation</h3>
       <div class="org">Tech Mahindra · banking, retail, and automotive clients</div>
@@ -183,78 +219,103 @@ footer{padding-block:36px 48px;color:var(--muted);font-size:.82rem;font-family:v
         <li>Piloted GenAI summarization for 2 operations teams and presented results to 150+ stakeholders.</li>
         <li>Mentored 2 junior analysts to a 20% drop in errors.</li>
       </ul>
-      <div class="tools">Tools: Python, SQL, Spark, PySpark, Power BI, Tableau, GitHub</div>
+      <div class="tools"><span>Python</span><span>SQL</span><span>Spark</span><span>PySpark</span><span>Power BI</span><span>Tableau</span><span>GitHub</span></div>
     </div>
   </div>
 </section>
 
 <section id="projects">
-  <div class="head"><span class="label">Work</span><h2>Projects</h2></div>
-  
-  <div class="projects" id="grid">
+  <div class="sh"><span class="eyebrow">Work</span><h2>Projects</h2></div>
+  <div class="projects">
 
-    <details class="proj"><summary><span class="label">Analytics &amp; BI</span><h3>Credit Card Portfolio Analytics &amp; Data Quality Automation</h3><div class="stack">AWS Glue · Redshift · Python · PySpark · SQL · Power BI</div><p class="sum">A data pipeline and dashboards built for about 5 million daily transactions, with quality checks and access control built in.</p><span class="more">View details</span></summary>
-<div class="detail">
-      <p>An AWS analytics solution for about 5 million daily transactions across customer, account, payment, and transaction data.</p>
-      <ul>
-        <li>Automated ETL with Glue, Python, and PySpark into Amazon Redshift for SQL analytics.</li>
-        <li>Added data quality validation, transaction reconciliation, metadata, lineage notes, and IAM-based access control.</li>
-        <li>Power BI dashboards for utilization, spending, payments, and delinquency.</li>
-      </ul>
-      <div class="note">Design targets: 40% less manual reporting, 30% faster pipeline runs, 99.5% data quality pass rate.</div>
-      <div class="tags"><span class="tag">Analytics</span><span class="tag">Engineering</span><span class="tag">BI</span></div>
-    </div></details>
+    <details class="proj">
+      <summary>
+        <span class="dept">Analytics &amp; BI</span>
+        <h3>Credit Card Portfolio Analytics &amp; Data Quality Automation</h3>
+        <div class="flow"><b>Transactions</b><i>→</i><b>AWS Glue + PySpark</b><i>→</i><b>Redshift</b><i>→</i><b>Power BI</b></div>
+        <p class="sum">A data pipeline and dashboards built for about 5 million daily transactions, with quality checks and access control built in.</p>
+        <span class="more">View details +</span>
+      </summary>
+      <div class="detail">
+        <ul>
+          <li>Automated ETL with Glue, Python, and PySpark into Amazon Redshift for SQL analytics.</li>
+          <li>Added data quality validation, transaction reconciliation, metadata, lineage notes, and IAM-based access control.</li>
+          <li>Power BI dashboards for utilization, spending, payments, and delinquency.</li>
+        </ul>
+        <div class="note">Design targets: 40% less manual reporting, 30% faster pipeline runs, 99.5% data quality pass rate.</div>
+      </div>
+    </details>
 
-    <details class="proj"><summary><span class="label">Data engineering</span><h3>Healthcare Data Platform</h3><div class="stack">Python · dbt · DuckDB · Snowflake · Airflow · GitHub Actions</div><p class="sum">Claims, members, providers, and pharmacy data with 60+ dbt tests and 32 pytest tests running on every change.</p><span class="more">View details</span></summary>
-<div class="detail">
-      <p>A runnable reference stack for an insurer's claims, members, providers, and pharmacy data, built on synthetic data.</p>
-      <ul>
-        <li>Idempotent loads, source data contracts, schema-drift flags, and quarantined bad rows.</li>
-        <li>60+ dbt tests and 32 pytest tests run in CI on every change.</li>
-        <li>Governed metrics layer, Snowflake RBAC and masking, and an AI query agent with SQL guardrails and PHI redaction.</li>
-      </ul>
-      <a class="repo" href="https://github.com/Jaivinay/healthcare-data-platform" target="_blank" rel="noopener">View repository</a>
-      <div class="tags"><span class="tag">Engineering</span><span class="tag">AI</span><span class="tag">Governance</span></div>
-    </div></details>
+    <details class="proj">
+      <summary>
+        <span class="dept">Data engineering</span>
+        <h3>Healthcare Data Platform</h3>
+        <div class="flow"><b>Payer feeds</b><i>→</i><b>Loader</b><i>→</i><b>dbt</b><i>→</i><b>Metrics</b><i>→</i><b>AI agent</b></div>
+        <p class="sum">Claims, members, providers, and pharmacy data with 60+ dbt tests and 32 pytest tests running on every change.</p>
+        <span class="more">View details +</span>
+      </summary>
+      <div class="detail">
+        <ul>
+          <li>Idempotent loads, source data contracts, schema-drift flags, and quarantined bad rows, built on synthetic data.</li>
+          <li>60+ dbt tests and 32 pytest tests run in CI on every change.</li>
+          <li>Governed metrics layer, Snowflake RBAC and masking, and an AI query agent with SQL guardrails and PHI redaction.</li>
+        </ul>
+        <a href="https://github.com/Jaivinay/healthcare-data-platform" target="_blank" rel="noopener">View repository</a>
+      </div>
+    </details>
 
-    <details class="proj"><summary><span class="label">AI &amp; GenAI</span><h3>GenAI Credit Card Policy &amp; Risk Knowledge Assistant</h3><div class="stack">Python · LangChain · Pinecone · OpenAI · RAG · Streamlit</div><p class="sum">Answers to policy and fraud questions tied to the source documents, with a framework to measure accuracy and speed.</p><span class="more">View details</span></summary>
-<div class="detail">
-      <p>A RAG assistant that answers questions across credit card policies, fraud guidelines, and compliance PDFs.</p>
-      <ul>
-        <li>Python ingestion with text extraction, overlapping chunks, and embeddings in Pinecone.</li>
-        <li>LangChain retrieval with an OpenAI model, so answers stay tied to the source policy.</li>
-        <li>Streamlit app for multi-PDF upload and plain-language questions, plus an evaluation framework for retrieval relevance, grounded accuracy, and latency.</li>
-      </ul>
-      <div class="tags"><span class="tag">AI</span><span class="tag">GenAI</span><span class="tag">RAG</span></div>
-    </div></details>
-    <details class="proj"><summary><span class="label">Data science</span><h3>AI-Driven Demand Forecasting</h3><div class="stack">Python · PyTorch · Temporal Fusion Transformer · PPO · Walmart M5</div><p class="sum">Forecast error 10% lower than a statistical baseline across 25 store-level datasets.</p><span class="more">View details</span></summary>
-<div class="detail">
-      <p>A two-stage system that forecasts demand and then decides what to do with the forecast.</p>
-      <ul>
-        <li>A Temporal Fusion Transformer for forecasts paired with a PPO reinforcement-learning agent.</li>
-        <li>Trained and compared across 25 store-level datasets against a statistical baseline.</li>
-        <li>Forecast error 10% lower than the baseline after joint tuning.</li>
-      </ul>
-      <a class="repo" href="https://github.com/Jaivinay/AI-Driven-Demand-Forecasting" target="_blank" rel="noopener">View repository</a>
-      <div class="tags"><span class="tag">Data science</span><span class="tag">Deep learning</span></div>
-    </div></details>
+    <details class="proj">
+      <summary>
+        <span class="dept">AI &amp; GenAI</span>
+        <h3>GenAI Credit Card Policy &amp; Risk Knowledge Assistant</h3>
+        <div class="flow"><b>Policy PDFs</b><i>→</i><b>Chunks + embeddings</b><i>→</i><b>Pinecone</b><i>→</i><b>LangChain + OpenAI</b><i>→</i><b>Answer</b></div>
+        <p class="sum">Answers to policy and fraud questions tied to the source documents, with a framework to measure accuracy and speed.</p>
+        <span class="more">View details +</span>
+      </summary>
+      <div class="detail">
+        <ul>
+          <li>Python ingestion with text extraction, overlapping chunks, and embeddings in Pinecone.</li>
+          <li>LangChain retrieval with an OpenAI model, so answers stay tied to the source policy.</li>
+          <li>Streamlit app for multi-PDF upload and plain-language questions, plus an evaluation framework for retrieval relevance, grounded accuracy, and latency.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="proj">
+      <summary>
+        <span class="dept">Data science</span>
+        <h3>AI-Driven Demand Forecasting</h3>
+        <div class="flow"><b>Walmart M5 sales</b><i>→</i><b>Temporal Fusion Transformer</b><i>→</i><b>PPO agent</b><i>→</i><b>Decisions</b></div>
+        <p class="sum">Forecast error 10% lower than a statistical baseline across 25 store-level datasets.</p>
+        <span class="more">View details +</span>
+      </summary>
+      <div class="detail">
+        <ul>
+          <li>A Temporal Fusion Transformer for forecasts paired with a PPO reinforcement-learning agent.</li>
+          <li>Trained and compared across 25 store-level datasets against a statistical baseline.</li>
+          <li>Forecast error 10% lower than the baseline after joint tuning.</li>
+        </ul>
+        <a href="https://github.com/Jaivinay/AI-Driven-Demand-Forecasting" target="_blank" rel="noopener">View repository</a>
+      </div>
+    </details>
+
   </div>
 </section>
 
 <section id="skills">
-  <div class="head"><span class="label">Tools</span><h2>Skills</h2></div>
+  <div class="sh"><span class="eyebrow">Tools</span><h2>Skills</h2></div>
   <div class="skills">
-    <div><h3>Analytics &amp; BI</h3><div class="tags"><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Looker</span><span class="tag">DAX</span><span class="tag">Excel</span><span class="tag">KPI reporting</span><span class="tag">Data visualization</span></div></div>
-    <div><h3>Data science &amp; ML</h3><div class="tags"><span class="tag">Python</span><span class="tag">R</span><span class="tag">pandas</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span><span class="tag">PyTorch</span><span class="tag">Forecasting</span><span class="tag">A/B testing</span><span class="tag">Causal inference</span><span class="tag">Statistics</span></div></div>
-    <div><h3>Data engineering</h3><div class="tags"><span class="tag">Snowflake</span><span class="tag">Redshift</span><span class="tag">Spark / PySpark</span><span class="tag">Airflow</span><span class="tag">dbt</span><span class="tag">Kafka</span><span class="tag">AWS (S3, Glue)</span><span class="tag">Azure</span><span class="tag">Databricks</span><span class="tag">ETL / ELT</span></div></div>
-    <div><h3>AI &amp; GenAI</h3><div class="tags"><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">Pinecone</span><span class="tag">Azure OpenAI</span><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Agents &amp; guardrails</span><span class="tag">LLM evaluation</span></div></div>
-    <div><h3>Engineering practice</h3><div class="tags"><span class="tag">Git / GitHub</span><span class="tag">Pull requests</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span><span class="tag">Docker</span><span class="tag">Linux shell</span><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">GitHub Copilot</span><span class="tag">VS Code</span></div></div>
-    <div><h3>Data management &amp; ways of working</h3><div class="tags"><span class="tag">Data quality</span><span class="tag">Metadata &amp; lineage</span><span class="tag">Access governance</span><span class="tag">Compliance</span><span class="tag">Agile</span><span class="tag">Kanban</span><span class="tag">Stakeholder communication</span></div></div>
+    <div><h3>Analytics &amp; BI</h3><div class="cl"><span>SQL</span><span>Power BI</span><span>Tableau</span><span>Looker</span><span>DAX</span><span>Excel</span><span>KPI reporting</span><span>Data visualization</span></div></div>
+    <div><h3>Data science &amp; ML</h3><div class="cl"><span>Python</span><span>R</span><span>pandas</span><span>NumPy</span><span>scikit-learn</span><span>PyTorch</span><span>Forecasting</span><span>A/B testing</span><span>Causal inference</span><span>Statistics</span></div></div>
+    <div><h3>Data engineering</h3><div class="cl"><span>Snowflake</span><span>Redshift</span><span>Spark / PySpark</span><span>Airflow</span><span>dbt</span><span>Kafka</span><span>AWS (S3, Glue)</span><span>Azure</span><span>Databricks</span><span>ETL / ELT</span></div></div>
+    <div><h3>AI &amp; GenAI</h3><div class="cl"><span>RAG</span><span>LangChain</span><span>Pinecone</span><span>Azure OpenAI</span><span>Claude</span><span>ChatGPT</span><span>Agents &amp; guardrails</span><span>LLM evaluation</span></div></div>
+    <div><h3>Engineering practice</h3><div class="cl"><span>Git / GitHub</span><span>Pull requests</span><span>GitHub Actions</span><span>CI/CD</span><span>Docker</span><span>Linux shell</span><span>Claude Code</span><span>Codex</span><span>GitHub Copilot</span><span>VS Code</span></div></div>
+    <div><h3>Data management &amp; ways of working</h3><div class="cl"><span>Data quality</span><span>Metadata &amp; lineage</span><span>Access governance</span><span>Compliance</span><span>Agile</span><span>Kanban</span><span>Stakeholder communication</span></div></div>
   </div>
 </section>
 
 <section id="education">
-  <div class="head"><span class="label">Background</span><h2>Education &amp; certifications</h2></div>
+  <div class="sh"><span class="eyebrow">Background</span><h2>Education &amp; certifications</h2></div>
   <div class="two">
     <div>
       <h3>Education</h3>
@@ -263,42 +324,38 @@ footer{padding-block:36px 48px;color:var(--muted);font-size:.82rem;font-family:v
     </div>
     <div>
       <h3>Certifications</h3>
-      <div class="tags"><span class="tag">AWS Certified Cloud Practitioner</span><span class="tag">Azure Fundamentals (AZ-900)</span><span class="tag">SnowPro Associate: Platform</span><span class="tag">Databricks AI Fundamentals</span></div>
+      <div class="tools"><span>AWS Certified Cloud Practitioner</span><span>Azure Fundamentals (AZ-900)</span><span>SnowPro Associate: Platform</span><span>Databricks AI Fundamentals</span></div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <div class="contact">
-    <span class="label">Get in touch</span>
-    <h2>Contact</h2>
+<section id="contact" style="padding-block:0">
+  <div class="cta-band">
+    <span class="eyebrow" style="color:inherit;opacity:.85">Contact</span>
+    <h2>Let's talk about your data.</h2>
     <div class="mail" id="mail">jaivinaygudiveka@gmail.com</div>
-    <div class="links">
-      <button class="btn primary" id="copyMail" type="button">Copy email</button>
+    <div class="cta" style="margin:0">
+      <button class="btn solid" id="copyMail" type="button">Copy email</button>
       <a class="btn" href="https://www.linkedin.com/in/jaivinaygudiveka" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn" href="https://github.com/Jaivinay" target="_blank" rel="noopener">GitHub</a>
     </div>
-    <span class="meta" id="copyMsg" role="status"></span>
+    <span class="meta" id="copyMsg" role="status">Tampa, FL · Open to relocate</span>
   </div>
 </section>
 
-<footer>Jaivinay Gudiveka · Tampa, FL · Open to relocate · <a href="https://www.linkedin.com/in/jaivinaygudiveka" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Jaivinay" target="_blank" rel="noopener">GitHub</a></footer>
+<footer>© Jaivinay Gudiveka</footer>
 </div>
 
 <script>
 (function(){
   var addr='jaivinaygudiveka@gmail.com', msg=document.getElementById('copyMsg');
-  function copy(){
-    var done=function(t){msg.textContent=t};
-    try{ navigator.clipboard.writeText(addr).then(function(){done('Email copied.')},function(){sel()}) }catch(e){sel()}
-  }
   function sel(){
     var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));
     var s=window.getSelection();s.removeAllRanges();s.addRange(r);msg.textContent='Email selected. Copy it with your keyboard.';
-    document.getElementById('contact').scrollIntoView();
   }
-  document.getElementById('copyMail').addEventListener('click',copy);
-  document.getElementById('copyTop').addEventListener('click',function(){ document.getElementById('contact').scrollIntoView(); copy(); });
+  document.getElementById('copyMail').addEventListener('click',function(){
+    try{navigator.clipboard.writeText(addr).then(function(){msg.textContent='Email copied.'},sel)}catch(e){sel()}
+  });
 })();
 </script>
 </body>
