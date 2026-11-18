@@ -143,6 +143,28 @@ html.js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
   .hero h1 .w{animation:none;opacity:1;transform:none}nav .brand i{animation:none}
   html.js .rv{opacity:1;transform:none;transition:none}.diag .nd{opacity:1;transform:none}.diag .ln{stroke-dashoffset:0}}
+
+/* grouped projects */
+.grp{display:flex;gap:18px;align-items:baseline;margin:56px 0 22px;padding-top:22px;border-top:1.5px solid var(--ink)}
+.grp:first-of-type{margin-top:8px}
+.grp .gn{font:400 italic 1.05rem var(--serif);color:var(--warm)}
+.grp h3{font:400 clamp(1.7rem,3.2vw,2.4rem)/1.05 var(--serif);letter-spacing:-.012em}
+.grp p{margin:6px 0 0;color:var(--muted);font-size:.95rem}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,470px),1fr));gap:18px}
+.pc{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px 26px 22px;display:flex;flex-direction:column;gap:14px;transition:border-color .25s,transform .25s}
+.pc:hover{border-color:var(--accent);transform:translateY(-3px)}
+.pc h4{font:400 1.55rem/1.12 var(--serif);letter-spacing:-.01em}
+.pwhat{margin:0;color:var(--muted);font-size:.94rem}
+.pflow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font:500 .71rem var(--mono);padding:12px 0;border-block:1px solid var(--hair)}
+.pflow b{font-weight:500;background:var(--soft);color:var(--accent);border-radius:7px;padding:4px 9px;transition:background .3s,color .3s}
+.pflow b.on{background:var(--accent);color:var(--accent-ink)}
+.pflow i{font-style:normal;color:var(--muted)}
+.pc ul{margin:0;padding-left:1.05em}.pc li{margin-bottom:5px;font-size:.92rem}
+.pnote{margin:0;font-size:.82rem;color:var(--muted);background:var(--bg);border-left:2px solid var(--warm);padding:8px 12px;border-radius:0 8px 8px 0}
+.pnote strong{color:var(--warm);font-weight:600}
+.pfoot{margin-top:auto;display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.plink{font-weight:600;font-size:.9rem;text-decoration:none;border-bottom:1.5px solid currentColor;align-self:flex-start;padding-bottom:1px}
+@media (max-width:560px){.grp{gap:12px}.pc{padding:22px 20px 20px}}
 </style>
 </head>
 <body>
@@ -151,7 +173,7 @@ html.js .rv.in{opacity:1;transform:none}
 <nav aria-label="Sections">
   <a class="brand" href="#top"><i></i>Jaivinay Gudiveka</a>
   <div class="links">
-    <a href="#work">Work</a><a href="#how">Approach</a><a href="#experience">Experience</a><a class="keep" href="#contact">Contact</a>
+    <a href="#work">Projects</a><a href="#how">Approach</a><a href="#experience">Experience</a><a class="keep" href="#contact">Contact</a>
     <button id="theme" type="button" aria-label="Toggle dark mode">◐</button>
   </div>
 </nav>
@@ -164,7 +186,7 @@ html.js .rv.in{opacity:1;transform:none}
     <p class="seek">Open to data analyst, BI, analytics engineering, data science and applied AI roles.<br>United States — open to relocate.</p>
   </div>
   <div class="cta">
-    <a class="btn primary" href="#work">See the work</a>
+    <a class="btn primary" href="#work">See the projects</a>
     <a class="btn" href="https://github.com/Jaivinay" target="_blank" rel="noopener">GitHub</a>
     <a class="btn" href="https://www.linkedin.com/in/jaivinaygudiveka" target="_blank" rel="noopener">LinkedIn</a>
   </div>
@@ -185,74 +207,67 @@ html.js .rv.in{opacity:1;transform:none}
 </div>
 
 <section id="work">
-  <div class="sh rv"><span class="mono">Selected work</span><h2>Analytics, data science and AI, in practice</h2>
-    <p>Each one is written the same way: the problem, what I built, what came out of it, and what it does not do yet.</p></div>
-
-  <article class="case rv" data-diag="Card transactions|Analysis-ready tables|KPI definitions|Power BI dashboards|Portfolio decisions">
-    <div class="caseTop">
-      <div>
-        <span class="num">01 — Data analytics &amp; BI</span>
-        <h3>Turning five million daily card transactions into a portfolio view</h3>
-        <p class="what">A credit card portfolio was reported by hand, and nobody could say which numbers had been checked before they reached a deck.</p>
-        <div class="chips"><span>SQL</span><span>Power BI</span><span>Python</span><span>Redshift</span><span>PySpark</span><span>AWS Glue</span></div>
-      </div>
-      <div class="dg"></div>
-    </div>
-    <div class="grid4">
-      <div class="blk"><h4>Question</h4><p>How are utilization, spending, payments and delinquency moving across the portfolio, and can leaders trust the figures?</p></div>
-      <div class="blk"><h4>What I built</h4><ul><li>Power BI dashboards for utilization, spend, payments and delinquency</li><li>SQL analysis in Redshift on reconciled, validated transactions</li><li>Agreed KPI definitions and lineage notes behind each metric</li><li>IAM-based access so each audience sees what it should</li></ul></div>
-      <div class="blk"><h4>Result</h4><p>Reporting moved from manual assembly to checked data feeding the dashboards, so every number has a trail behind it.</p></div>
-      <div class="blk"><h4>Limits</h4><p>The 40% manual-reporting reduction, 30% faster runs and 99.5% quality pass rate are design targets, not production measurements.</p></div>
-    </div>
-  </article>
-
-  <article class="case rv" data-diag="Walmart M5 sales|Temporal Fusion Transformer|PPO agent|Decisions">
-    <div class="caseTop">
-      <div>
-        <span class="num">02 — Data science &amp; ML</span>
-        <h3>Forecasting demand, then deciding what to do about it</h3>
-        <p class="what">A forecast on its own does not make a decision. This project pairs a deep-learning forecaster with a reinforcement-learning agent and measures it against a statistical baseline.</p>
-        <div class="chips"><span>Python</span><span>Temporal Fusion Transformer</span><span>Reinforcement learning</span><span>PPO</span></div>
-      </div>
-      <div class="dg"></div>
-    </div>
-    <div class="grid4">
-      <div class="blk"><h4>Question</h4><p>Does a Temporal Fusion Transformer feeding a PPO agent beat a plain statistical forecast on retail demand?</p></div>
-      <div class="blk"><h4>What I built</h4><ul><li>A Temporal Fusion Transformer for the demand forecasts</li><li>A PPO reinforcement-learning agent that acts on them</li><li>Training and comparison across 25 store-level datasets from Walmart M5 sales data</li><li>Joint tuning of forecaster and agent</li></ul></div>
-      <div class="blk"><h4>Result</h4><p>Forecast error came out 10% lower than the statistical baseline.</p></div>
-      <div class="blk"><h4>Limits</h4><p>Run on public competition data, so it shows how the method performs rather than a deployment inside a real supply chain.</p></div>
-    </div>
-    <div class="caseLinks"><a href="https://github.com/Jaivinay/AI-Driven-Demand-Forecasting" target="_blank" rel="noopener">Read the code →</a></div>
-  </article>
-
-  <article class="case rv" data-diag="Policy PDFs|Chunk + embed|Pinecone|LangChain + LLM|Cited answer">
-    <div class="caseTop">
-      <div>
-        <span class="num">03 — AI &amp; GenAI</span>
-        <h3>Policy answers that show their source</h3>
-        <p class="what">Card policy and fraud questions meant hunting through long PDFs, and a plain chatbot would answer confidently without showing where the answer came from.</p>
-        <div class="chips"><span>Python</span><span>LangChain</span><span>Pinecone</span><span>OpenAI</span><span>RAG</span><span>Streamlit</span></div>
-      </div>
-      <div class="dg"></div>
-    </div>
-    <div class="grid4">
-      <div class="blk"><h4>Question</h4><p>Can an assistant answer policy and risk questions in plain language and still point to the clause behind each answer?</p></div>
-      <div class="blk"><h4>What I built</h4><ul><li>Ingestion with text extraction and overlapping chunks</li><li>Embeddings stored and retrieved in Pinecone</li><li>LangChain retrieval that keeps answers tied to the source</li><li>A Streamlit app for multi-PDF upload and plain questions</li></ul></div>
-      <div class="blk"><h4>Result</h4><p>An evaluation framework scores retrieval relevance, grounded accuracy and latency, so changes can be compared instead of guessed at.</p></div>
-      <div class="blk"><h4>Limits</h4><p>It runs locally rather than as a hosted demo, and the evaluation set covers card policy documents only.</p></div>
-    </div>
-  </article>
-
-  <div class="found rv">
-    <div>
-      <span class="num">Also built · Data foundations</span>
-      <h3>A healthcare data platform that refuses bad rows</h3>
-      <p>Claims, member, provider and pharmacy feeds with source data contracts, schema-drift flags and quarantined bad rows, a governed metrics layer with Snowflake RBAC and masking, and an AI query agent with SQL guardrails and PHI redaction. 60+ dbt tests and 32 pytest tests run in CI on every change. Built on synthetic data.</p>
-    </div>
-    <div>
-      <div class="chips"><span>dbt</span><span>Snowflake</span><span>Python</span><span>pytest</span><span>GitHub Actions</span></div>
-      <a class="link" href="https://github.com/Jaivinay/healthcare-data-platform" target="_blank" rel="noopener">Read the code →</a>
-    </div>
+  <div class="sh rv"><span class="mono">Selected work</span><h2>Projects by discipline</h2>
+    <p>Six projects across AI, data science, analytics and data engineering. Where a result is a target or the data is synthetic or public, the card says so.</p></div>
+  <div class="grp rv"><span class="gn">01</span><div><h3>AI &amp; GenAI</h3><p>Retrieval, LLM applications and the evaluation that keeps them honest.</p></div></div>
+  <div class="pgrid">
+    <article class="pc rv">
+      <h4>GenAI credit card policy &amp; risk knowledge assistant</h4>
+      <p class="pwhat">Answers policy and fraud questions in plain language and ties each answer back to the source document.</p>
+      <div class="pflow"><b>Policy PDFs</b><i>→</i><b>Chunks + embeddings</b><i>→</i><b>Pinecone</b><i>→</i><b>LangChain + OpenAI</b><i>→</i><b>Answer</b></div>
+      <ul><li>Python ingestion with text extraction, overlapping chunks and embeddings in Pinecone</li><li>LangChain retrieval with an OpenAI model, so answers stay tied to the source policy</li><li>Streamlit app for multi-PDF upload and plain-language questions</li><li>Evaluation framework for retrieval relevance, grounded accuracy and latency</li></ul>
+      
+      <div class="pfoot"><div class="chips"><span>Python</span><span>LangChain</span><span>Pinecone</span><span>OpenAI</span><span>RAG</span><span>Streamlit</span></div></div>
+    </article>
+  </div>
+  <div class="grp rv"><span class="gn">02</span><div><h3>Data science &amp; ML</h3><p>Forecasting and modeling, measured against a baseline.</p></div></div>
+  <div class="pgrid">
+    <article class="pc rv">
+      <h4>AI-driven demand forecasting</h4>
+      <p class="pwhat">Pairs a deep-learning forecaster with a reinforcement-learning agent and compares it with a statistical baseline.</p>
+      <div class="pflow"><b>Walmart M5 sales</b><i>→</i><b>Temporal Fusion Transformer</b><i>→</i><b>PPO agent</b><i>→</i><b>Decisions</b></div>
+      <ul><li>Temporal Fusion Transformer for demand forecasts, with a PPO agent that acts on them</li><li>Trained and compared across 25 store-level datasets, with joint tuning</li><li>Forecast error 10% lower than the statistical baseline</li></ul>
+      <p class="pnote"><strong>Note:</strong> Run on public competition data, so it shows how the method performs rather than a live deployment.</p>
+      <div class="pfoot"><div class="chips"><span>Python</span><span>Time series</span><span>TFT</span><span>PPO</span><span>Forecasting</span></div><a class="plink" href="https://github.com/Jaivinay/AI-Driven-Demand-Forecasting" target="_blank" rel="noopener">Read the code →</a></div>
+    </article>
+    <article class="pc rv">
+      <h4>Power generation forecasting</h4>
+      <p class="pwhat">Forecasts wind turbine and solar output to support operational planning.</p>
+      <div class="pflow"><b>Historical generation</b><i>→</i><b>Cleaning</b><i>→</i><b>ARIMA model</b><i>→</i><b>Actual vs predicted</b></div>
+      <ul><li>ARIMA time-series model reaching 89% forecasting accuracy</li><li>Cleaned and preprocessed historical generation data before modeling</li><li>Actual-versus-predicted visuals that make the results easy to explain</li></ul>
+      
+      <div class="pfoot"><div class="chips"><span>Python</span><span>ARIMA</span><span>Time series</span><span>EDA</span></div><a class="plink" href="https://github.com/Jaivinay/Data-Science-Project-Challenge" target="_blank" rel="noopener">Read the code →</a></div>
+    </article>
+  </div>
+  <div class="grp rv"><span class="gn">03</span><div><h3>Data analytics &amp; BI</h3><p>Dashboards and analysis built around the decision they support.</p></div></div>
+  <div class="pgrid">
+    <article class="pc rv">
+      <h4>Credit card portfolio analytics</h4>
+      <p class="pwhat">Turns about five million daily card transactions into a portfolio view of utilization, spend, payments and delinquency.</p>
+      <div class="pflow"><b>Card transactions</b><i>→</i><b>Glue + PySpark</b><i>→</i><b>Redshift</b><i>→</i><b>Power BI</b></div>
+      <ul><li>Power BI dashboards for utilization, spending, payments and delinquency</li><li>SQL analysis in Redshift on validated, reconciled transactions</li><li>Metadata, lineage notes and IAM-based access control behind the numbers</li></ul>
+      <p class="pnote"><strong>Note:</strong> The 40% less manual reporting, 30% faster runs and 99.5% quality pass rate are design targets, not production measurements.</p>
+      <div class="pfoot"><div class="chips"><span>SQL</span><span>Power BI</span><span>Python</span><span>Redshift</span><span>AWS Glue</span></div></div>
+    </article>
+    <article class="pc rv">
+      <h4>Cross-channel marketing dashboard</h4>
+      <p class="pwhat">Brings Facebook, Google and TikTok campaign data into one model so channels can be compared like for like.</p>
+      <div class="pflow"><b>Facebook</b><i>→</i><b>Google</b><i>→</i><b>TikTok</b><i>→</i><b>Unified model</b><i>→</i><b>Power BI</b></div>
+      <ul><li>Standardized spend, engagement, conversion and channel metrics across the three sources</li><li>KPI visuals, filters and DAX measures built for executive reporting</li><li>Surfaced underperforming channels and budget optimization opportunities</li></ul>
+      
+      <div class="pfoot"><div class="chips"><span>Power BI</span><span>SQL</span><span>DAX</span><span>Data modeling</span></div><a class="plink" href="https://github.com/Jaivinay/Cross-Channel-Marketing-Performance-Dashboard" target="_blank" rel="noopener">Read the code →</a></div>
+    </article>
+  </div>
+  <div class="grp rv"><span class="gn">04</span><div><h3>Data engineering</h3><p>Pipelines and platforms that catch bad data before anyone uses it.</p></div></div>
+  <div class="pgrid">
+    <article class="pc rv">
+      <h4>Healthcare data platform</h4>
+      <p class="pwhat">A tested, governed platform for claims, member, provider and pharmacy feeds, built on synthetic data.</p>
+      <div class="pflow"><b>Payer feeds</b><i>→</i><b>Loader</b><i>→</i><b>dbt</b><i>→</i><b>Metrics layer</b><i>→</i><b>AI agent</b></div>
+      <ul><li>Idempotent loads, source data contracts, schema-drift flags and quarantined bad rows</li><li>Governed metrics layer with Snowflake RBAC and masking</li><li>AI query agent with SQL guardrails and PHI redaction</li><li>60+ dbt tests and 32 pytest tests run in CI on every change</li></ul>
+      
+      <div class="pfoot"><div class="chips"><span>dbt</span><span>Snowflake</span><span>Python</span><span>pytest</span><span>GitHub Actions</span></div><a class="plink" href="https://github.com/Jaivinay/healthcare-data-platform" target="_blank" rel="noopener">Read the code →</a></div>
+    </article>
   </div>
 </section>
 
@@ -383,6 +398,10 @@ D.querySelectorAll('.case').forEach(function(c){
   });
   box.appendChild(svg);
 });
+
+/* project flow highlight */
+D.querySelectorAll('.pflow').forEach(function(f){var c=f.querySelectorAll('b'),j=0;if(!c.length||RM)return;
+  c[0].classList.add('on');setInterval(function(){c[j].classList.remove('on');j=(j+1)%c.length;c[j].classList.add('on')},1100+Math.random()*300)});
 
 /* hero data flow canvas */
 (function(){
