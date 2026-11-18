@@ -5,127 +5,100 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Jaivinay Gudiveka: data analytics, business intelligence, data science and AI portfolio.">
 <title>Jaivinay Gudiveka Portfolio</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: oversized name + a results chart as the hero, index-style focus list, timeline, flow-diagram project cards */
-:root{
-  color-scheme:light;
-  --bg:#f5f6fb; --surface:#ffffff; --ink:#0c1226; --muted:#59627a; --line:#dde1ee;
-  --accent:#1f4fff; --accent-ink:#ffffff; --accent-soft:#e6ecff; --signal:#f59e0b; --bar:#dfe5fb; --grid:#d5daea;
-  --display:'Bricolage Grotesque','Inter',system-ui,sans-serif;
-  --body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#080d1c; --surface:#0f1730; --ink:#eaf0ff; --muted:#9aa6c7; --line:#1f2a4d;
-  --accent:#7c9bff; --accent-ink:#071030; --accent-soft:#16224a; --signal:#ffc24d; --bar:#1a2650; --grid:#1b2548; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#080d1c; --surface:#0f1730; --ink:#eaf0ff; --muted:#9aa6c7; --line:#1f2a4d;
-  --accent:#7c9bff; --accent-ink:#071030; --accent-soft:#16224a; --signal:#ffc24d; --bar:#1a2650; --grid:#1b2548; color-scheme:dark}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
-  background-image:radial-gradient(var(--grid) 1px,transparent 1.2px);background-size:26px 26px}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+:root{color-scheme:dark;
+  --bg:#07080d;--card:rgba(255,255,255,.045);--card2:rgba(255,255,255,.08);--ink:#f2f4fa;--muted:#9aa3b8;--line:rgba(255,255,255,.1);
+  --a:#7c5cff;--b:#22d3ee;--c:#ff7a59;--grad:linear-gradient(100deg,#7c5cff,#22d3ee);
+  --display:'Space Grotesk','Inter',system-ui,sans-serif;--body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);overflow-x:hidden;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(600px 420px at 85% -5%,rgba(124,92,255,.35),transparent 70%),radial-gradient(520px 380px at 5% 30%,rgba(34,211,238,.16),transparent 70%),radial-gradient(500px 400px at 90% 85%,rgba(255,122,89,.12),transparent 70%)}
 .wrap{max-width:1140px;margin:0 auto}
-a{color:var(--accent)}
+a{color:var(--b)}
 h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
-.eyebrow{font:500 .75rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-/* nav */
+.eyebrow{font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--b)}
 nav.top{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);z-index:50;margin-top:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;
-  background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;padding:8px 10px 8px 20px}
-nav.top .brand{font:700 1rem var(--display);letter-spacing:-.01em;white-space:nowrap}
+  background:rgba(14,16,26,.7);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:8px 10px 8px 20px}
+nav.top .brand{font:700 1rem var(--display);white-space:nowrap}
+nav.top .brand::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--grad);margin-right:9px;box-shadow:0 0 12px var(--b)}
 nav.top .links{display:flex;gap:2px;overflow-x:auto}
 nav.top .links a{font:500 .82rem var(--body);color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:999px;white-space:nowrap}
-nav.top .links a:hover{background:var(--accent-soft);color:var(--accent)}
-.btn{display:inline-flex;align-items:center;gap:8px;font:600 .92rem var(--body);padding:12px 20px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
-.btn:hover{transform:translateY(-2px)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.btn:focus-visible,nav a:focus-visible,summary:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
-/* hero */
-.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:72px 40px}
-.hero h1{font-size:clamp(3rem,8.4vw,6.4rem);line-height:.95;letter-spacing:-.04em;font-weight:800;margin-block:14px 22px}
-.hero h1 span{color:var(--accent)}
-.lede{font-size:1.2rem;max-width:36ch;color:var(--ink)}
+nav.top .links a:hover{background:var(--card2);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .92rem var(--body);padding:12px 22px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px);background:var(--card2)}
+.btn.primary{background:var(--grad);border:0;color:#06070c}
+.btn:focus-visible,nav a:focus-visible,summary:focus-visible{outline:3px solid var(--c);outline-offset:2px}
+.hero{padding-block:84px 24px}
+.hero h1{font-size:clamp(3.2rem,9vw,7rem);line-height:.95;letter-spacing:-.045em;font-weight:700;margin-block:16px 20px}
+.hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:clamp(1.1rem,2vw,1.4rem);max-width:44ch;color:#cfd5e6;margin:0}
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.where{margin-top:22px;font:500 .8rem var(--mono);color:var(--muted)}
-.chart{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px 24px 18px;box-shadow:0 24px 60px -30px rgba(15,30,90,.35)}
-.chart h2{font-size:1.15rem;letter-spacing:-.01em;margin:6px 0 2px}
-.chart p.sub{margin:0 0 16px;color:var(--muted);font-size:.85rem}
-.bars{display:grid;gap:11px}
-.bar{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:baseline;font-size:.85rem}
-.bar .t{color:var(--ink);font-weight:500}
-.bar .v{font:500 .82rem var(--mono);color:var(--accent)}
-.bar .track{grid-column:1/-1;height:10px;border-radius:99px;background:var(--bar);overflow:hidden}
-.bar .fill{height:100%;width:var(--w);border-radius:99px;background:var(--accent);transform-origin:left;animation:grow .9s cubic-bezier(.2,.7,.2,1) backwards}
-.bar:nth-child(even) .fill{background:var(--signal)}
-.bar:nth-child(even) .v{color:var(--ink)}
-.bar .ctx{grid-column:1/-1;font-size:.74rem;color:var(--muted);margin-top:-1px}
-@keyframes grow{from{transform:scaleX(0)}}
-.bar:nth-child(2) .fill{animation-delay:.06s}.bar:nth-child(3) .fill{animation-delay:.12s}.bar:nth-child(4) .fill{animation-delay:.18s}.bar:nth-child(5) .fill{animation-delay:.24s}.bar:nth-child(6) .fill{animation-delay:.3s}.bar:nth-child(7) .fill{animation-delay:.36s}
-/* sections */
-section{padding-block:72px 6px;scroll-margin-top:84px}
+.where{margin-top:20px;font:500 .8rem var(--mono);color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:52px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 20px 18px;position:relative;overflow:hidden;backdrop-filter:blur(6px)}
+.kpi::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--grad);opacity:.8}
+.kpi .n{font:700 clamp(2.2rem,4.4vw,3.2rem) var(--display);letter-spacing:-.03em;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kpi .t{margin-top:10px;font-weight:600;font-size:.95rem}
+.kpi .c{margin-top:2px;font-size:.78rem;color:var(--muted)}
+.kpi:nth-child(3n) .n{background:linear-gradient(100deg,#ff7a59,#ffc24d);-webkit-background-clip:text;background-clip:text}
+section{padding-block:84px 0;scroll-margin-top:84px}
 .sh{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
-.sh h2{font-size:clamp(2rem,4.5vw,3rem);letter-spacing:-.03em;font-weight:800}
-/* focus index */
-.index{border-top:1.5px solid var(--ink)}
-.index .row{display:grid;grid-template-columns:70px minmax(0,1fr) minmax(0,1.3fr);gap:8px 24px;padding:20px 8px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .15s,padding .15s}
-.index .row:hover{background:var(--accent-soft);padding-inline:18px}
-.index .n{font:500 .8rem var(--mono);color:var(--accent)}
-.index h3{font-size:1.5rem;letter-spacing:-.02em}
-.index p{margin:0;color:var(--muted)}
-@media (max-width:760px){.index .row{grid-template-columns:36px 1fr}.index p{grid-column:2}}
-/* timeline */
-.job{display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 36px;padding-block:28px;border-top:1px solid var(--line)}
-.job:first-of-type{border-top:1.5px solid var(--ink)}
-.job .yr{font:800 1.9rem var(--display);letter-spacing:-.03em;line-height:1}
-.job .yr small{display:block;margin-top:8px;font:500 .78rem var(--mono);color:var(--muted);letter-spacing:0}
-.job h3{font-size:1.35rem;letter-spacing:-.02em}
-.job .org{color:var(--muted);margin:2px 0 12px}
-.job ul{margin:0;padding-left:1.15em}
-.job li{margin-bottom:7px}
+.sh h2{font-size:clamp(2rem,4.5vw,3rem);letter-spacing:-.035em;font-weight:700}
+.index{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+.index .row{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:8px;transition:transform .2s,border-color .2s}
+.index .row:hover{transform:translateY(-4px);border-color:var(--a)}
+.index .n{font:500 .78rem var(--mono);color:var(--c)}
+.index h3{font-size:1.35rem;letter-spacing:-.02em}
+.index p{margin:0;color:var(--muted);font-size:.95rem}
+@media (min-width:1000px){.index .row:last-child{grid-column:span 2}}
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--a),var(--b),transparent)}
+.job{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:16px}
+.job::before{content:"";position:absolute;left:-34px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--b);box-shadow:0 0 14px var(--b)}
+.job .yr{font:500 .82rem var(--mono);color:var(--c);margin-bottom:6px}
+.job .yr small{color:var(--muted);margin-left:10px;font-size:.78rem}
+.job h3{font-size:1.4rem;letter-spacing:-.02em}
+.job .org{color:var(--muted);margin:2px 0 14px}
+.job ul{margin:0;padding-left:1.15em}.job li{margin-bottom:7px}
 .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-.tools span,.tag{font:500 .74rem var(--mono);background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:99px}
-@media (max-width:760px){.job{grid-template-columns:1fr}.job .yr{font-size:1.5rem}}
-/* projects */
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,500px),1fr));gap:18px;align-items:start}
-details.proj{background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .2s,box-shadow .2s}
-details.proj:hover{transform:translateY(-3px);box-shadow:0 24px 50px -28px rgba(15,30,90,.45)}
+.tools span{font:500 .74rem var(--mono);background:rgba(124,92,255,.16);color:#c9bcff;border:1px solid rgba(124,92,255,.3);padding:4px 10px;border-radius:99px}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,500px),1fr));gap:16px;align-items:start}
+details.proj{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .2s,border-color .2s}
+details.proj:hover,details.proj[open]{border-color:var(--a)}
 details.proj summary{list-style:none;cursor:pointer;padding:24px;display:flex;flex-direction:column;gap:12px}
 details.proj summary::-webkit-details-marker{display:none}
-.proj .dept{font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.proj .dept{font:500 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
 .proj h3{font-size:1.45rem;letter-spacing:-.02em;line-height:1.15}
 .flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font:500 .74rem var(--mono)}
-.flow b{font-weight:500;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:5px 9px;color:var(--ink)}
-.flow i{font-style:normal;color:var(--signal);font-weight:700}
+.flow b{font-weight:500;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.28);color:#a5f0fb;border-radius:8px;padding:5px 9px}
+.flow i{font-style:normal;color:var(--c);font-weight:700}
 .proj .sum{margin:0;color:var(--muted);font-size:.95rem}
-.proj .more{font:600 .82rem var(--body);color:var(--accent)}
+.proj .more{font:600 .82rem var(--body);color:var(--b)}
 details.proj[open] .more{display:none}
-.detail{padding:0 24px 24px;display:flex;flex-direction:column;gap:10px;border-top:1px dashed var(--line);padding-top:18px;margin-inline:24px;padding-inline:0}
-.detail ul{margin:0;padding-left:1.15em}
-.detail li{margin-bottom:6px;font-size:.93rem}
+.detail{margin:0 24px;padding:18px 0 24px;border-top:1px dashed var(--line);display:flex;flex-direction:column;gap:10px}
+.detail ul{margin:0;padding-left:1.15em}.detail li{margin-bottom:6px;font-size:.93rem}
 .note{font-size:.8rem;color:var(--muted);font-style:italic}
-/* skills */
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:16px}
-.skills>div{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}
-.skills h3{font-size:1rem;margin-bottom:12px;letter-spacing:-.01em}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:14px}
+.skills>div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}
+.skills h3{font-size:1rem;margin-bottom:12px}
 .skills .cl{display:flex;flex-wrap:wrap;gap:6px}
-.skills .cl span{font:500 .76rem var(--mono);border:1px solid var(--line);padding:4px 10px;border-radius:99px;color:var(--ink)}
+.skills .cl span{font:500 .76rem var(--mono);border:1px solid var(--line);padding:4px 10px;border-radius:99px;color:#dfe4f2}
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:28px}
-.two h3{font-size:1.2rem;margin-bottom:12px}
-.two p{margin:0 0 12px}
-.cta-band{margin-block:72px 24px;background:var(--accent);color:var(--accent-ink);border-radius:28px;padding:clamp(28px,5vw,56px);display:grid;gap:18px}
-.cta-band h2{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1;letter-spacing:-.04em;font-weight:800}
+.two h3{font-size:1.2rem;margin-bottom:12px}.two p{margin:0 0 12px;color:#cfd5e6}
+.cta-band{margin-block:84px 24px;background:var(--grad);color:#06070c;border-radius:28px;padding:clamp(28px,5vw,56px);display:grid;gap:18px}
+.cta-band h2{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1;letter-spacing:-.04em;font-weight:700}
 .cta-band .mail{font:500 clamp(1rem,2.4vw,1.4rem) var(--mono);word-break:break-all}
-.cta-band .btn{border-color:var(--accent-ink);color:var(--accent-ink)}
-.cta-band .btn.solid{background:var(--accent-ink);color:var(--accent)}
-.cta-band .meta{font:500 .8rem var(--mono);opacity:.85}
+.cta-band .btn{background:rgba(255,255,255,.25);border:1px solid rgba(0,0,0,.25);color:#06070c}
+.cta-band .btn.solid{background:#06070c;color:#fff;border-color:#06070c}
+.cta-band .meta{font:500 .8rem var(--mono)}
 footer{padding-block:20px 48px;color:var(--muted);font:500 .78rem var(--mono)}
-@media (max-width:860px){.hero{grid-template-columns:1fr;padding-block:48px 24px;gap:32px}nav.top .links a:nth-child(n+5){display:none}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar .fill{animation:none}.btn,details.proj,.index .row{transition:none}}
+@media (max-width:860px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-block:56px 8px}nav.top .links a:nth-child(n+5){display:none}}
+@media (max-width:560px){.tl{padding-left:26px}.job::before{left:-26px}.job{padding:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
-
 </head>
 <body>
 <div class="wrap">
@@ -135,31 +108,21 @@ footer{padding-block:20px 48px;color:var(--muted);font:500 .78rem var(--mono)}
 </nav>
 
 <header class="hero" id="top">
-  <div>
-    <span class="eyebrow">Data analytics · BI · Data science · AI</span>
-    <h1>Jaivinay <span>Gudiveka</span></h1>
-    <p class="lede">I turn messy business data into dashboards, models, and AI tools that people actually use.</p>
-    <div class="cta">
-      <a class="btn primary" href="#projects">See projects</a>
-      <a class="btn" href="https://www.linkedin.com/in/jaivinaygudiveka" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/Jaivinay" target="_blank" rel="noopener">GitHub</a>
-    </div>
-    <div class="where">Tampa, FL · Open to relocate · M.S. in AI &amp; Business Analytics</div>
+  <span class="eyebrow">Data analytics · BI · Data science · AI</span>
+  <h1>Jaivinay<br><span>Gudiveka</span></h1>
+  <p class="lede">I turn messy business data into dashboards, models, and AI tools that people actually use.</p>
+  <div class="cta">
+    <a class="btn primary" href="#projects">See projects</a>
+    <a class="btn" href="https://www.linkedin.com/in/jaivinaygudiveka" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/Jaivinay" target="_blank" rel="noopener">GitHub</a>
   </div>
-  <aside class="chart" aria-label="Selected results">
-    <span class="eyebrow">Selected results</span>
-    <h2>What changed after the work</h2>
-    <p class="sub">Measured improvements from past projects</p>
-    <div class="bars">
-      <div class="bar" style="--w:100%"><span class="t">Claims document review time</span><span class="v">−40%</span><div class="track"><div class="fill"></div></div><span class="ctx">RAG assistant over 10,000+ documents, 20+ reviewers</span></div>
-      <div class="bar" style="--w:75%"><span class="t">Repeat support tickets</span><span class="v">−30%</span><div class="track"><div class="fill"></div></div><span class="ctx">Across 100+ monthly issues</span></div>
-      <div class="bar" style="--w:75%"><span class="t">Report load time</span><span class="v">−30%</span><div class="track"><div class="fill"></div></div><span class="ctx">Rebuilt dashboards for 3 business units</span></div>
-      <div class="bar" style="--w:70%"><span class="t">Source-to-report discrepancies</span><span class="v">−28%</span><div class="track"><div class="fill"></div></div><span class="ctx">Reconciled data across source systems</span></div>
-      <div class="bar" style="--w:50%"><span class="t">Data issues</span><span class="v">−20%</span><div class="track"><div class="fill"></div></div><span class="ctx">Automated quality checks, 3 business units</span></div>
-      <div class="bar" style="--w:45%"><span class="t">Decision accuracy</span><span class="v">+18%</span><div class="track"><div class="fill"></div></div><span class="ctx">Across 10+ A/B experiments</span></div>
-      <div class="bar" style="--w:25%"><span class="t">Forecast error</span><span class="v">−10%</span><div class="track"><div class="fill"></div></div><span class="ctx">Models on 10.5M+ records</span></div>
-    </div>
-  </aside>
+  <div class="where">Tampa, FL · Open to relocate · M.S. in AI &amp; Business Analytics</div>
+  <div class="kpis" aria-label="Selected results">
+    <div class="kpi"><div class="n">−40%</div><div class="t">Claims review time</div><div class="c">RAG assistant, 10,000+ documents</div></div>
+    <div class="kpi"><div class="n">10.5M+</div><div class="t">Records modeled</div><div class="c">Forecast error down 10%</div></div>
+    <div class="kpi"><div class="n">−30%</div><div class="t">Report load time</div><div class="c">3 business units</div></div>
+    <div class="kpi"><div class="n">+18%</div><div class="t">Decision accuracy</div><div class="c">10+ A/B experiments</div></div>
+  </div>
 </header>
 
 <section id="focus">
@@ -175,10 +138,11 @@ footer{padding-block:20px 48px;color:var(--muted);font:500 .78rem var(--mono)}
 
 <section id="experience">
   <div class="sh"><span class="eyebrow">Career</span><h2>Experience</h2></div>
+<div class="tl">
 
   <div class="job">
-    <div class="yr">2025 – now<small>Remote, USA</small></div>
     <div>
+      <div class="yr">2025 – now<small>Remote, USA</small></div>
       <h3>Senior Data Analyst, Product Analytics &amp; AI</h3>
       <div class="org">Bytebridge Technologies · financial services and insurance client</div>
       <ul>
@@ -194,8 +158,8 @@ footer{padding-block:20px 48px;color:var(--muted);font:500 .78rem var(--mono)}
   </div>
 
   <div class="job">
-    <div class="yr">2025<small>Aug – Dec · Tampa, FL</small></div>
     <div>
+      <div class="yr">2025<small>Aug – Dec · Tampa, FL</small></div>
       <h3>Graduate Assistant, Data Analytics &amp; Statistics</h3>
       <div class="org">University of South Florida</div>
       <ul>
@@ -207,8 +171,8 @@ footer{padding-block:20px 48px;color:var(--muted);font:500 .78rem var(--mono)}
   </div>
 
   <div class="job">
-    <div class="yr">2021 – 2024<small>Dec – Jul · Bengaluru, India</small></div>
     <div>
+      <div class="yr">2021 – 2024<small>Dec – Jul · Bengaluru, India</small></div>
       <h3>Data Analyst &amp; Data Scientist, Analytics &amp; Experimentation</h3>
       <div class="org">Tech Mahindra · banking, retail, and automotive clients</div>
       <ul>
@@ -222,6 +186,7 @@ footer{padding-block:20px 48px;color:var(--muted);font:500 .78rem var(--mono)}
       <div class="tools"><span>Python</span><span>SQL</span><span>Spark</span><span>PySpark</span><span>Power BI</span><span>Tableau</span><span>GitHub</span></div>
     </div>
   </div>
+</div>
 </section>
 
 <section id="projects">
