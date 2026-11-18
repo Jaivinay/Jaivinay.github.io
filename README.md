@@ -1,52 +1,29 @@
 # Jaivinay Gudiveka Portfolio
 
-Personal portfolio website showcasing my work across AI/ML, GenAI, Data Science, Data Engineering, Analytics, Cloud, and BI.
+Personal portfolio website covering data analytics, business intelligence, data science, data engineering, and AI.
 
-Live Website: https://jaivinay.github.io
+Live website: https://jaivinay.github.io
 
-## Overview
+## What is on the site
 
-This portfolio highlights my experience, technical skills, and selected projects focused on building practical data and AI solutions. It is designed for AI/ML Engineer, GenAI Developer, Data Scientist, Data Engineer, Analytics Engineer, and BI Analyst roles.
+- **Focus areas:** analytics, BI, data science and ML, data engineering, and AI and GenAI
+- **Experience:** roles with the tools used and measurable results
+- **Projects:** one project per discipline, each expandable for details
+- **Skills, education, and certifications**
 
-## Featured Areas
+## Featured projects
 
-- AI/ML and Data Science
-- GenAI, RAG, and AI Agents
-- Data Engineering and Cloud Platforms
-- MLOps and Model Pipelines
-- Analytics and BI Dashboards
-- Forecasting and Time-Series Modeling
+- Credit Card Portfolio Analytics & Data Quality Automation (AWS Glue, Redshift, Python, PySpark, SQL, Power BI)
+- Healthcare Data Platform (Python, dbt, DuckDB, Snowflake, Airflow, GitHub Actions)
+- GenAI Credit Card Policy & Risk Knowledge Assistant (Python, LangChain, Pinecone, OpenAI, RAG, Streamlit)
+- AI-Driven Demand Forecasting (PyTorch, Temporal Fusion Transformer, PPO)
 
-## Featured Projects
+## Built with
 
-- LangChain BAIS Academic Assistant
-- Multi-PDF RAG Assistant
-- Deepfake Image Detection
-- AI-Driven Demand Forecasting
-- Real-Time Weather Data Pipeline
-- Cross-Channel Marketing Dashboard
-
-## Tech Stack
-
-- HTML
-- CSS
-- GitHub Pages
-- Python
-- SQL
-- LangChain
-- OpenAI API
-- FAISS
-- Spark
-- Kafka
-- Airflow
-- Snowflake
-- AWS
-- Power BI
-
-
+Plain HTML, CSS, and a small amount of JavaScript. Hosted on GitHub Pages, with no build step.
 
 ## Contact
 
-LinkedIn: https://www.linkedin.com/in/jaivinay-gudiveka
+LinkedIn: https://www.linkedin.com/in/jaivinaygudiveka
 
 GitHub: https://github.com/Jaivinay
