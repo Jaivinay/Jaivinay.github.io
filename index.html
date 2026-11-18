@@ -180,6 +180,17 @@ html.js .rv.in{opacity:1;transform:none}
 @keyframes panelIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 .pdesc{margin:14px 0 22px;color:var(--muted);max-width:56ch}
 @media (prefers-reduced-motion:reduce){.panel{animation:none}}
+
+/* experience detail */
+.xp .sum{margin:8px 0 0;color:var(--ink);font-size:.97rem;max-width:60ch}
+.xp .roles{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.xp .roles span{font:500 .72rem var(--mono);color:var(--accent);background:var(--soft);padding:4px 10px;border-radius:99px}
+.engs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:18px}
+.eng{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:var(--surface)}
+.eng .lab{font:600 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--warm)}
+.eng h4{font:400 1.2rem/1.15 var(--serif);margin:6px 0 8px}
+.eng p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.55}
+.xp .r{padding:28px 0}
 </style>
 </head>
 <body>
@@ -224,12 +235,21 @@ html.js .rv.in{opacity:1;transform:none}
 <section id="experience">
   <div class="sh rv"><span class="mono">Career</span><h2>Experience</h2><p>The short version. The resume has the full detail.</p></div>
   <div class="xp rv">
-    <div class="r"><div class="y">2025 — now</div><div><h3><span class="co">Bytebridge Technologies</span><span class="rl">Senior Data Analyst, Product Analytics &amp; AI</span></h3>
-      <p>Financial services and insurance work. Cut claims document review time 40% with a RAG assistant, and replaced 5+ manual reports with tested, scheduled refreshes.</p></div></div>
-    <div class="r"><div class="y">2025</div><div><h3><span class="co">University of South Florida</span><span class="rl">Graduate Assistant, Data Analytics &amp; Statistics</span></h3>
-      <p>Supported 50+ students across 30+ lab sessions in Python, SQL, statistics and machine learning.</p></div></div>
-    <div class="r"><div class="y">2021 — 2024</div><div><h3><span class="co">Tech Mahindra</span><span class="rl">Data Analyst &amp; Data Scientist</span></h3>
-      <p>Banking and automotive work. Reduced forecast error 10% on 10.5M+ records, and lowered report load time 30% for three business units.</p></div></div>
+    <div class="r"><div class="y">2025 — now</div><div>
+      <h3><span class="co">Bytebridge Technologies</span><span class="rl">Senior Data Analyst, Product Analytics &amp; AI</span></h3>
+      <p class="sum">Analytics and AI work for a large health insurer, covering claims, product and financial reporting, and go-to-market performance.</p>
+      <div class="roles" aria-label="Focus areas"><span>Product analytics</span><span>GTM &amp; revenue analytics</span><span>AI enablement</span><span>Data governance</span></div>
+      <div class="engs"><div class="eng"><span class="lab">Health insurance client</span><h4>Claims analytics &amp; AI</h4><p>Cut claims document review time 40% for 20+ reviewers with a RAG assistant over 10,000+ documents, after comparing 4 LLM workflows. Kept 4 claims workflows within PHI and PII access controls, audit logging and HIPAA-aligned governance.</p></div><div class="eng"><span class="lab">Finance &amp; GTM analytics</span><h4>Reporting, pipeline and revenue</h4><p>Traced the drivers of cost and performance across 10M+ records (2 TB) in Snowflake with SQL, Python and Spark. Analyzed pipeline and conversion in Salesforce and Gong to show where deals slowed. Gave 50+ self-serve users agreed KPIs, and replaced 5+ manual reports, saving 100+ hours a month.</p></div></div></div></div>
+    <div class="r"><div class="y">2025</div><div>
+      <h3><span class="co">University of South Florida</span><span class="rl">Graduate Assistant, Data Analytics &amp; Statistics</span></h3>
+      <p class="sum">Taught and supported applied analytics, statistics and machine learning for graduate students.</p>
+      <div class="roles" aria-label="Focus areas"><span>Instruction</span><span>Biostatistics</span></div>
+      <div class="engs"><div class="eng"><span class="lab">Lab instruction</span><h4>Python, SQL and machine learning</h4><p>Supported 50+ students across 30+ lab sessions in Python, SQL, data science and machine learning.</p></div><div class="eng"><span class="lab">Biostatistics</span><h4>Statistical reasoning</h4><p>Taught biostatistics in R and Python using clinical and patient-data examples.</p></div></div></div></div>
+    <div class="r"><div class="y">2021 — 2024</div><div>
+      <h3><span class="co">Tech Mahindra</span><span class="rl">Data Analyst &amp; Data Scientist</span></h3>
+      <p class="sum">Analytics, experimentation and modeling for banking and automotive manufacturing clients.</p>
+      <div class="roles" aria-label="Focus areas"><span>Credit risk &amp; BI</span><span>Experimentation &amp; causal inference</span><span>Marketing mix &amp; attribution</span><span>Forecasting</span></div>
+      <div class="engs"><div class="eng"><span class="lab">Banking client</span><h4>Credit risk &amp; BI reporting</h4><p>Lowered report load time 30% and data issues 20% for 3 business units. Resolved 28% of discrepancies between source systems and reports, and documented metadata and lineage for recurring reporting.</p></div><div class="eng"><span class="lab">Automotive manufacturing client</span><h4>Forecasting &amp; experimentation</h4><p>Reduced forecast error 10% on 10.5M+ records with Spark, PySpark and Python. Improved decision accuracy 18% across 10+ A/B experiments, ran 3+ difference-in-differences studies across 10+ markets, and built a marketing mix model across 6+ channels. Piloted GenAI summarization for 2 operations teams.</p></div></div></div></div>
   </div>
 </section>
 
