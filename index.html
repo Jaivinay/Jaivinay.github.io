@@ -236,6 +236,22 @@ html.js .rv.in{opacity:1;transform:none}
 .pc{gap:12px;padding:24px 24px 20px}
 .pc li{font-size:.94rem;margin-bottom:4px}
 .pnote{font-size:.8rem}
+
+/* more details */
+details.more{margin-top:14px}
+details.more>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font:600 .84rem var(--body);color:var(--accent);padding:6px 0}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::after{content:"+";display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1.5px solid currentColor;font-size:.9rem;line-height:1;transition:transform .25s}
+details.more[open]>summary::after{content:"\2212"}
+details.more>summary:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:6px}
+details.more[open]>summary{margin-bottom:6px}
+details.more[open]>*:not(summary){animation:panelIn .35s cubic-bezier(.19,1,.22,1)}
+.xp .bul.det{margin-top:6px;padding:14px 18px 6px 2.1em;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.xp .bul.det li{font-size:.92rem;color:var(--muted);margin-bottom:9px}
+.pc details.more{margin-top:2px}
+.pc .pwhat{margin:2px 0 10px;color:var(--muted);font-size:.9rem}
+.pc .pdet{margin:0;padding:14px 18px 6px 2.1em;background:var(--bg);border:1px solid var(--hair);border-radius:12px}
+.pc .pdet li{font-size:.88rem;color:var(--muted);margin-bottom:8px}
 </style>
 </head>
 <body>
@@ -298,7 +314,7 @@ html.js .rv.in{opacity:1;transform:none}
         <li>Identified where deals slowed through Salesforce and Gong pipeline analysis.</li>
         <li>Automated 5+ manual reports, saving 100+ hours a month.</li>
       </ul>
-      <div class="tl">SQL · Python · Spark · Snowflake · Power BI · Tableau · LangChain</div></div></div>
+      <details class="more"><summary>More details</summary><ul class="bul det"><li>Reduced claims document review time 40% for 20+ reviewers by engineering a RAG assistant over 10,000+ documents, selected after comparing 4 LLM workflows side by side.</li><li>Analyzed 10M+ records (about 2 TB) with SQL, Python and Spark on Snowflake to identify the drivers of cost and performance, and presented the findings to leadership every month.</li><li>Identified where deals slowed by evaluating pipeline and conversion in Salesforce and Gong data.</li><li>Automated 5+ manual reports into scheduled, tested refreshes that save 100+ hours a month, and enabled 50+ users with self-serve dashboards built on agreed KPI definitions.</li><li>Maintained 100% compliance across 4 claims workflows against 40+ controls and 20+ policies, and conducted 35+ experiments to determine which changes delivered results.</li></ul></details><div class="tl">SQL · Python · Spark · Snowflake · Power BI · Tableau · LangChain</div></div></div>
     <div class="r"><div class="y">2021 — 2024</div><div>
       <h3><span class="co">Tech Mahindra</span><span class="rl">Data Analyst &amp; Data Scientist</span></h3>
       <div class="cli"><b>Clients</b>Banking · Finance · Automotive manufacturing</div>
@@ -308,7 +324,7 @@ html.js .rv.in{opacity:1;transform:none}
         <li>Developed a marketing mix model across 6+ channels.</li>
         <li>Optimized report load time 30% for 3 business units.</li>
       </ul>
-      <div class="tl">Python · SQL · Spark · PySpark · Power BI · Tableau · Git</div></div></div>
+      <details class="more"><summary>More details</summary><ul class="bul det"><li>Decreased forecast error 10% on 10.5M+ records by developing Spark, PySpark and Python models validated on holdout data.</li><li>Improved decision accuracy 18% across 10+ A/B experiments, and quantified pricing and incentive effects in 3+ difference-in-differences studies across 10+ markets.</li><li>Developed a marketing mix model across 6+ channels and delivered attribution readouts to the teams managing the budget.</li><li>Optimized report load time 30% and reduced data issues 20% for 3 business units, and resolved 28% of the discrepancies between source systems and reports.</li><li>Implemented a GenAI summarization pilot for 2 operations teams, and mentored 2 junior analysts to a 20% reduction in errors.</li></ul></details><div class="tl">Python · SQL · Spark · PySpark · Power BI · Tableau · Git</div></div></div>
   </div>
 </section>
 
@@ -322,7 +338,7 @@ html.js .rv.in{opacity:1;transform:none}
         <li>Delivered biostatistics instruction in R and Python with clinical examples.</li>
         <li>Curated datasets for 10+ research workflows and built Power BI dashboards.</li>
       </ul>
-      <div class="tl">Python · SQL · R · Power BI · Excel</div></div></div>
+      <details class="more"><summary>More details</summary><ul class="bul det"><li>Facilitated 50+ students across 30+ lab sessions in Python, SQL, data science and machine learning.</li><li>Delivered biostatistics and statistical reasoning instruction in R and Python, using clinical and patient-data examples.</li><li>Curated and validated datasets for 10+ research and analytics workflows, covering cleaning, transformation and feature preparation.</li><li>Developed Power BI dashboards and Excel reporting templates that standardized recurring analysis requests.</li></ul></details><div class="tl">Python · SQL · R · Power BI · Excel</div></div></div>
   </div>
 </section>
 
@@ -336,6 +352,7 @@ html.js .rv.in{opacity:1;transform:none}
         <h4>Credit card portfolio analytics</h4>
         <div class="pflow"><b>Card transactions</b><i>→</i><b>Glue + PySpark</b><i>→</i><b>Redshift</b><i>→</i><b>Power BI</b></div>
         <ul><li>Power BI dashboards for utilization, spend, payments and delinquency</li><li>SQL analysis on about 5M daily transactions in Redshift</li></ul>
+        <details class="more"><summary>More details</summary><p class="pwhat">Turns about five million daily card transactions into a portfolio view of utilization, spend, payments and delinquency.</p><ul class="pdet"><li>Automated ETL with AWS Glue, Python and PySpark into Redshift for SQL analytics</li><li>Data quality validation and transaction reconciliation before anything reaches a dashboard</li><li>Metadata, lineage notes and IAM-based access control behind the numbers</li><li>Power BI dashboards for utilization, spending, payments and delinquency</li></ul></details>
         <p class="pnote">Design targets, not measured results: 40% less manual reporting, 30% faster runs, 99.5% quality pass rate.</p>
         <div class="pfoot"><div class="chips"><span>SQL</span><span>Power BI</span><span>Python</span><span>Redshift</span><span>AWS Glue</span></div></div>
       </article>
@@ -343,6 +360,7 @@ html.js .rv.in{opacity:1;transform:none}
         <h4>Cross-channel marketing dashboard</h4>
         <div class="pflow"><b>Facebook, Google, TikTok</b><i>→</i><b>Unified model</b><i>→</i><b>Power BI</b></div>
         <ul><li>Three ad platforms standardized into one data model</li><li>KPI visuals and DAX measures for executive reporting</li></ul>
+        <details class="more"><summary>More details</summary><p class="pwhat">Brings Facebook, Google and TikTok campaign data into one model so channels can be compared like for like.</p><ul class="pdet"><li>Standardized spend, engagement, conversion and channel metrics across the three sources</li><li>KPI visuals, filters and DAX measures built for executive reporting</li><li>Surfaced underperforming channels and budget optimization opportunities</li></ul></details>
         
         <div class="pfoot"><div class="chips"><span>Power BI</span><span>SQL</span><span>DAX</span></div><a class="plink" href="https://github.com/Jaivinay/Cross-Channel-Marketing-Performance-Dashboard" target="_blank" rel="noopener">Read the code →</a></div>
       </article>
@@ -354,6 +372,7 @@ html.js .rv.in{opacity:1;transform:none}
         <h4>Healthcare data platform</h4>
         <div class="pflow"><b>Payer feeds</b><i>→</i><b>Loader</b><i>→</i><b>dbt</b><i>→</i><b>Metrics layer</b><i>→</i><b>AI agent</b></div>
         <ul><li>Data contracts, schema-drift flags and quarantined bad rows</li><li>60+ dbt tests and 32 pytest tests running in CI</li></ul>
+        <details class="more"><summary>More details</summary><p class="pwhat">A tested, governed platform for claims, member, provider and pharmacy feeds, built on synthetic data.</p><ul class="pdet"><li>Idempotent loads, source data contracts, schema-drift flags and quarantined bad rows</li><li>Governed metrics layer with Snowflake RBAC and masking</li><li>AI query agent with SQL guardrails and PHI redaction</li><li>60+ dbt tests and 32 pytest tests run in CI on every change</li></ul></details>
         <p class="pnote">Built on synthetic data.</p>
         <div class="pfoot"><div class="chips"><span>dbt</span><span>Snowflake</span><span>Python</span><span>pytest</span><span>GitHub Actions</span></div><a class="plink" href="https://github.com/Jaivinay/healthcare-data-platform" target="_blank" rel="noopener">Read the code →</a></div>
       </article>
@@ -361,6 +380,7 @@ html.js .rv.in{opacity:1;transform:none}
         <h4>Real-time weather data pipeline</h4>
         <div class="pflow"><b>Weather API</b><i>→</i><b>Kafka</b><i>→</i><b>Spark</b><i>→</i><b>MinIO</b><i>→</i><b>Snowflake</b></div>
         <ul><li>Live data for five Florida cities streamed into Snowflake</li><li>Daily and hourly Airflow DAGs running in Docker Compose</li></ul>
+        <details class="more"><summary>More details</summary><p class="pwhat">A streaming pipeline that ingests live weather data for five Florida cities and lands analytics-ready tables in Snowflake. A team project.</p><ul class="pdet"><li>Python producer feeding a Kafka topic, with Spark cleaning and aggregating into Parquet</li><li>Raw and processed zones in MinIO, an S3-compatible data lake, then loaded into Snowflake</li><li>Two Airflow DAGs, one daily batch and one hourly stream, running in Docker Compose</li><li>Troubleshooting guide in the README for the common failures</li></ul></details>
         <p class="pnote">Team project. Dashboard and alerts are planned, not built.</p>
         <div class="pfoot"><div class="chips"><span>Kafka</span><span>Spark</span><span>Airflow</span><span>Snowflake</span><span>Docker</span></div><a class="plink" href="https://github.com/Jaivinay/Real-Time-Weather-Data-Pipeline" target="_blank" rel="noopener">Read the code →</a></div>
       </article>
@@ -372,6 +392,7 @@ html.js .rv.in{opacity:1;transform:none}
         <h4>AI-driven demand forecasting</h4>
         <div class="pflow"><b>Walmart M5 sales</b><i>→</i><b>Temporal Fusion Transformer</b><i>→</i><b>PPO agent</b><i>→</i><b>Decisions</b></div>
         <ul><li>Forecasts across 25 store-level datasets</li><li>Error 10% below a statistical baseline</li></ul>
+        <details class="more"><summary>More details</summary><p class="pwhat">Forecasts retail demand and measures the result against a statistical baseline.</p><ul class="pdet"><li>Forecasts across 25 store-level datasets, compared with a statistical baseline</li><li>Forecast error 10% lower than the baseline after joint tuning</li><li>A PPO agent acts on the forecasts to optimize inventory replenishment decisions</li></ul></details>
         <p class="pnote">Public competition data, not a live deployment.</p>
         <div class="pfoot"><div class="chips"><span>Python</span><span>Time series</span><span>Forecasting</span></div><a class="plink" href="https://github.com/Jaivinay/AI-Driven-Demand-Forecasting" target="_blank" rel="noopener">Read the code →</a></div>
       </article>
@@ -379,6 +400,7 @@ html.js .rv.in{opacity:1;transform:none}
         <h4>Power generation forecasting</h4>
         <div class="pflow"><b>Historical generation</b><i>→</i><b>Cleaning</b><i>→</i><b>ARIMA</b><i>→</i><b>Actual vs predicted</b></div>
         <ul><li>Wind and solar output forecast at 89% accuracy</li><li>Actual-versus-predicted visuals for stakeholders</li></ul>
+        <details class="more"><summary>More details</summary><p class="pwhat">Forecasts wind turbine and solar output to support operational planning.</p><ul class="pdet"><li>ARIMA time-series model reaching 89% forecasting accuracy</li><li>Cleaned and preprocessed historical generation data before modeling</li><li>Actual-versus-predicted visuals that make the results easy to explain</li></ul></details>
         
         <div class="pfoot"><div class="chips"><span>Python</span><span>ARIMA</span><span>Time series</span></div><a class="plink" href="https://github.com/Jaivinay/Data-Science-Project-Challenge" target="_blank" rel="noopener">Read the code →</a></div>
       </article>
@@ -390,6 +412,7 @@ html.js .rv.in{opacity:1;transform:none}
         <h4>AI-driven demand forecasting</h4>
         <div class="pflow"><b>Walmart M5 sales</b><i>→</i><b>Temporal Fusion Transformer</b><i>→</i><b>PPO agent</b><i>→</i><b>Decisions</b></div>
         <ul><li>Transformer forecasts with a reinforcement-learning agent</li><li>Trained and tuned jointly across 25 datasets</li></ul>
+        <details class="more"><summary>More details</summary><p class="pwhat">Pairs a deep-learning forecaster with a reinforcement-learning agent.</p><ul class="pdet"><li>Temporal Fusion Transformer for demand forecasts, with a PPO reinforcement-learning agent that acts on them</li><li>Trained across 25 store-level datasets with joint tuning</li><li>Evaluated against baseline forecasting methods using cross-validation and statistical metrics</li></ul></details>
         
         <div class="pfoot"><div class="chips"><span>Python</span><span>PyTorch</span><span>TFT</span><span>PPO</span></div><a class="plink" href="https://github.com/Jaivinay/AI-Driven-Demand-Forecasting" target="_blank" rel="noopener">Read the code →</a></div>
       </article>
@@ -397,6 +420,7 @@ html.js .rv.in{opacity:1;transform:none}
         <h4>Deepfake image detection</h4>
         <div class="pflow"><b>Image dataset</b><i>→</i><b>Preprocessing</b><i>→</i><b>Xception vs ViT</b><i>→</i><b>Evaluation</b></div>
         <ul><li>Xception and Vision Transformer compared on real versus fake images</li><li>Validation metrics and loss curves documented</li></ul>
+        <details class="more"><summary>More details</summary><p class="pwhat">Computer vision project comparing two architectures on real versus fake image classification.</p><ul class="pdet"><li>Trained and evaluated competing deep learning architectures</li><li>Compared performance using validation metrics and loss curves</li><li>Documented preprocessing, model design and evaluation for reproducibility</li></ul></details>
         
         <div class="pfoot"><div class="chips"><span>Python</span><span>TensorFlow</span><span>Xception</span><span>ViT</span></div><a class="plink" href="https://github.com/Jaivinay/deepfake-image-detection" target="_blank" rel="noopener">Read the code →</a></div>
       </article>
@@ -408,6 +432,7 @@ html.js .rv.in{opacity:1;transform:none}
         <h4>GenAI credit card policy assistant</h4>
         <div class="pflow"><b>Policy PDFs</b><i>→</i><b>Embeddings</b><i>→</i><b>Pinecone</b><i>→</i><b>LangChain + OpenAI</b><i>→</i><b>Answer</b></div>
         <ul><li>Retrieval keeps every answer tied to the source policy</li><li>Evaluation of relevance, grounded accuracy and latency</li></ul>
+        <details class="more"><summary>More details</summary><p class="pwhat">Answers policy and fraud questions in plain language and ties each answer back to the source document.</p><ul class="pdet"><li>Python ingestion with text extraction, overlapping chunks and embeddings in Pinecone</li><li>LangChain retrieval with an OpenAI model, so answers stay tied to the source policy</li><li>Streamlit app for multi-PDF upload and plain-language questions</li><li>Evaluation framework for retrieval relevance, grounded accuracy and latency</li></ul></details>
         
         <div class="pfoot"><div class="chips"><span>Python</span><span>LangChain</span><span>Pinecone</span><span>OpenAI</span><span>Streamlit</span></div></div>
       </article>
@@ -415,6 +440,7 @@ html.js .rv.in{opacity:1;transform:none}
         <h4>LangChain BAIS academic assistant</h4>
         <div class="pflow"><b>Program content</b><i>→</i><b>Embeddings</b><i>→</i><b>Pinecone</b><i>→</i><b>LangChain + GPT</b></div>
         <ul><li>Context-aware Q&amp;A over structured and unstructured content</li><li>Streamlit interface for asking questions</li></ul>
+        <details class="more"><summary>More details</summary><p class="pwhat">An LLM assistant that answers academic program questions using retrieval over structured and unstructured content.</p><ul class="pdet"><li>Context-aware Q&amp;A with the OpenAI GPT API and LangChain</li><li>Pinecone vector search to retrieve relevant structured and unstructured context</li><li>Streamlit interface for asking questions</li></ul></details>
         
         <div class="pfoot"><div class="chips"><span>Python</span><span>LangChain</span><span>OpenAI</span><span>Pinecone</span></div><a class="plink" href="https://github.com/Jaivinay/Chatbot-Data-Logging-Analytics-for-Student-Admissions" target="_blank" rel="noopener">Read the code →</a></div>
       </article>
@@ -422,6 +448,7 @@ html.js .rv.in{opacity:1;transform:none}
         <h4>Multi-PDF RAG assistant</h4>
         <div class="pflow"><b>PDF upload</b><i>→</i><b>Embeddings</b><i>→</i><b>FAISS</b><i>→</i><b>Llama 3.2 via Ollama</b><i>→</i><b>Answer + sources</b></div>
         <ul><li>Fully local: FAISS retrieval with Llama 3.2 through Ollama</li><li>Multi-PDF upload, chat history and a source viewer</li></ul>
+        <details class="more"><summary>More details</summary><p class="pwhat">A document question-answering app that runs fully on your own machine, so documents stay private.</p><ul class="pdet"><li>End-to-end RAG: PDF ingestion, text extraction, chunking, embeddings, vector search and answer generation</li><li>FAISS for semantic retrieval and a local Llama 3.2 model through Ollama</li><li>Streamlit chat interface with multi-PDF upload, saved chat history, a saved index and a viewer for the retrieved sources</li></ul></details>
         
         <div class="pfoot"><div class="chips"><span>Python</span><span>LangChain</span><span>FAISS</span><span>Ollama</span></div><a class="plink" href="https://github.com/Jaivinay/multi-pdf-rag-assistant" target="_blank" rel="noopener">Read the code →</a></div>
       </article>
